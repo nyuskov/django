@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-19 11:15+0000\n"
+"POT-Creation-Date: 2025-10-19 14:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,11 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: blog/apps.py:8
+#: blog/admin.py:11
+msgid "Project administration"
+msgstr "Администрирование проекта"
+
+#: blog/apps.py:9
 msgid "Blog"
 msgstr "Блог"
 
@@ -52,14 +56,14 @@ msgstr "Слаг"
 msgid "Body"
 msgstr "Тело"
 
-#: blog/models.py:22
+#: blog/models.py:24
 msgid "Publish date"
 msgstr "Дата публикации"
 
-#: blog/models.py:25
+#: blog/models.py:32
 msgid "Status"
 msgstr "Статус"
 
-#: blog/models.py:26
+#: blog/models.py:38
 msgid "Author"
 msgstr "Автор"

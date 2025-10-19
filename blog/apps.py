@@ -1,4 +1,5 @@
 from django.apps import AppConfig
+from django.contrib.admin import AdminSite
 from django.utils.translation import gettext_lazy as _
 
 
