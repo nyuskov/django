@@ -14,10 +14,13 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf import settings
 from django.contrib import admin
-from django.urls import path
 from debug_toolbar.toolbar import debug_toolbar_urls
+from django.urls import path, include
 from django.utils.translation import gettext as _
+from django.views.generic import RedirectView
+
 
 # Изменение административной части сайта
 admin.site.site_header = _('Project administration')
@@ -26,4 +29,10 @@ admin.site.index_title = _('Site administration')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('blog/', include('blog.urls', namespace='blog')),
 ] + debug_toolbar_urls()
+
+if settings.DEBUG:
+    urlpatterns += [
+        path('favicon.ico', RedirectView.as_view(url='/static/images/favicon.ico')),
+    ]
