@@ -16,8 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.views.generic import TemplateView
 from debug_toolbar.toolbar import debug_toolbar_urls
+from django.utils.translation import gettext as _
+
+# Изменение административной части сайта
+admin.site.site_header = _('Project administration')
+admin.site.site_title = _('Administrative site of project')
+admin.site.index_title = _('Site administration')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

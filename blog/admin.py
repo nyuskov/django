@@ -3,10 +3,13 @@ from django.utils.translation import gettext as _
 
 from .models import Post
 
-
+@admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'slug', 'publish')
-
-admin.site.register(Post, PostAdmin)
-admin.site.site_header = _('Project administration')
-admin.site.index_title = _('Site administration')
+    list_display = ('title', 'slug', 'status', 'author', 'publish')
+    list_filter = ('status', 'created', 'publish', 'author')
+    search_fields = ('title', 'body')
+    prepopulated_fields = {'slug': ('title',)}
+    raw_id_fields = ('author',)
+    date_hierarchy = 'publish'
+    ordering = ('status', 'publish')
+    show_facets = admin.ShowFacets.ALWAYS

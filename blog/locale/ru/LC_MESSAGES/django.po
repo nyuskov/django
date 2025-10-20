@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-19 14:15+0000\n"
+"POT-Creation-Date: 2025-10-20 07:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,50 +20,58 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: blog/admin.py:11
-msgid "Project administration"
-msgstr "Администрирование проекта"
-
 #: blog/apps.py:9
 msgid "Blog"
 msgstr "Блог"
 
-#: blog/models.py:12
+#: blog/models.py:18
 msgid "Post"
 msgstr "Пост"
 
-#: blog/models.py:13
+#: blog/models.py:19
 msgid "Posts"
 msgstr "Посты"
 
-#: blog/models.py:16
+#: blog/models.py:22
 msgid "Draft"
 msgstr "Черновик"
 
-#: blog/models.py:17
-msgid "Publish"
-msgstr "Опубликовать"
+#: blog/models.py:23
+#, fuzzy
+#| msgid "Publish"
+msgid "Published"
+msgstr "Опубликован"
 
-#: blog/models.py:19
+#: blog/models.py:27
 msgid "Title"
 msgstr "Название"
 
-#: blog/models.py:20
+#: blog/models.py:28
 msgid "Slug"
 msgstr "Слаг"
 
-#: blog/models.py:21
+#: blog/models.py:29
 msgid "Body"
 msgstr "Тело"
 
-#: blog/models.py:24
-msgid "Publish date"
+#: blog/models.py:32
+#, fuzzy
+#| msgid "Publish date"
+msgid "Published date"
 msgstr "Дата публикации"
 
-#: blog/models.py:32
+#: blog/models.py:34
+msgid "Created date"
+msgstr "Дата создания"
+
+#: blog/models.py:35
+msgid "Updated date"
+msgstr "Дата обновления"
+
+#: blog/models.py:40
 msgid "Status"
 msgstr "Статус"
 
-#: blog/models.py:38
+#: blog/models.py:46
 msgid "Author"
 msgstr "Автор"

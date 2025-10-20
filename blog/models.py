@@ -3,6 +3,12 @@ from django.db import models
 from django.utils import timezone
 from django.utils.translation import gettext as _
 
+
+class PublishedManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(status=Post.Status.PUBLISHED)
+    
+    
 class Post(models.Model):
     class Meta:
         ordering = ('-publish',)
@@ -14,17 +20,19 @@ class Post(models.Model):
 
     class Status(models.TextChoices):
         DRAFT = 'DF', _('Draft')
-        PUBLISH = 'PB', _('Publish')
+        PUBLISHED = 'PB', _('Published')
 
+    objects = models.Manager()
+    published = PublishedManager()
     title = models.CharField(max_length=250, verbose_name=_('Title'))
     slug = models.SlugField(max_length=250, verbose_name=_('Slug'))
     body = models.TextField(verbose_name=_('Body'))
     publish = models.DateTimeField(
         default=timezone.now,
-        verbose_name=_('Publish date'),
+        verbose_name=_('Published date'),
     )
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True, verbose_name=_('Created date'))
+    updated = models.DateTimeField(auto_now=True, verbose_name=_('Updated date'))
     status = models.CharField(
         max_length=2,
         choices=Status.choices,
