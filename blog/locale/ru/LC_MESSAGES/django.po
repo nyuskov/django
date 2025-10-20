@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-20 07:50+0000\n"
+"POT-Creation-Date: 2025-10-20 16:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,54 +20,116 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: blog/apps.py:9
+#: blog/apps.py:8
 msgid "Blog"
 msgstr "Блог"
 
-#: blog/models.py:18
+#: blog/models.py:20
 msgid "Post"
 msgstr "Пост"
 
-#: blog/models.py:19
+#: blog/models.py:21
 msgid "Posts"
 msgstr "Посты"
 
-#: blog/models.py:22
+#: blog/models.py:24
 msgid "Draft"
 msgstr "Черновик"
 
-#: blog/models.py:23
+#: blog/models.py:25 blog/templates/blog/post/detail.html:11
+#: blog/templates/blog/post/list.html:13
 msgid "Published"
 msgstr "Опубликован"
 
-#: blog/models.py:27
+#: blog/models.py:31
 msgid "Title"
 msgstr "Название"
 
-#: blog/models.py:28
+#: blog/models.py:34
 msgid "Slug"
 msgstr "Слаг"
 
-#: blog/models.py:29
+#: blog/models.py:36
 msgid "Body"
 msgstr "Тело"
 
-#: blog/models.py:32
+#: blog/models.py:39
 msgid "Published date"
 msgstr "Дата публикации"
 
-#: blog/models.py:34
+#: blog/models.py:43
 msgid "Created date"
 msgstr "Дата создания"
 
-#: blog/models.py:35
+#: blog/models.py:47
 msgid "Updated date"
 msgstr "Дата обновления"
 
-#: blog/models.py:40
+#: blog/models.py:53
 msgid "Status"
 msgstr "Статус"
 
-#: blog/models.py:46
+#: blog/models.py:59
 msgid "Author"
 msgstr "Автор"
+
+#: blog/templates/blog/base.html:20
+msgid "My blog"
+msgstr "Мой блог"
+
+#: blog/templates/blog/base.html:22
+msgid "This is my blog"
+msgstr "Это мой блог"
+
+#: blog/templates/blog/post/detail.html:11
+#: blog/templates/blog/post/list.html:13
+msgid "by"
+msgstr ""
+
+#: blog/templates/blog/post/detail.html:15
+msgid "Share this post"
+msgstr "Поделиться этим постом"
+
+#: blog/templates/blog/post/list.html:5 blog/templates/blog/post/list.html:9
+msgid "My Blog"
+msgstr "Мой Блог"
+
+#: blog/templates/blog/post/share.html:4
+msgid "Share a post"
+msgstr "Поделиться постом"
+
+#: blog/templates/blog/post/share.html:8
+msgid "E-mail successfully sent"
+msgstr "Почта успешно отправлена"
+
+#: blog/templates/blog/post/share.html:10
+msgid "was successfully sent to"
+msgstr "была успешна отправлена"
+
+#: blog/templates/blog/post/share.html:13
+msgid "Share"
+msgstr "Поделиться"
+
+#: blog/templates/blog/post/share.html:13
+msgid "by e-mail"
+msgstr "почтой"
+
+#: blog/templates/blog/post/share.html:17
+msgid "Send e-mail"
+msgstr "Отправить почтой"
+
+#: blog/templates/pagination.html:4
+msgid "Previous"
+msgstr "Предыдущая"
+
+#: blog/templates/pagination.html:6
+msgid "Page"
+msgstr "Страница"
+
+#: blog/templates/pagination.html:6
+msgid "of"
+msgstr "из"
+
+#: blog/templates/pagination.html:8
+msgid "Next"
+msgstr "Следующая"

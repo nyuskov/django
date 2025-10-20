@@ -78,6 +78,7 @@ input[type=submit] {
     padding: 10px 20px;
     font-size: 14px;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 .errorlist {
