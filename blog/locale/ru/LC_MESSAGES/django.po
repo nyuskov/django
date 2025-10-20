@@ -37,8 +37,6 @@ msgid "Draft"
 msgstr "Черновик"
 
 #: blog/models.py:23
-#, fuzzy
-#| msgid "Publish"
 msgid "Published"
 msgstr "Опубликован"
 
@@ -55,8 +53,6 @@ msgid "Body"
 msgstr "Тело"
 
 #: blog/models.py:32
-#, fuzzy
-#| msgid "Publish date"
 msgid "Published date"
 msgstr "Дата публикации"
 
