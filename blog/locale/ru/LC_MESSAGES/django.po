@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-21 09:16+0000\n"
+"POT-Creation-Date: 2025-10-21 12:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,72 +24,80 @@ msgstr ""
 msgid "Blog"
 msgstr "Блог"
 
-#: blog/models.py:20 blog/models.py:90
-msgid "Post"
-msgstr "Пост"
-
-#: blog/models.py:21
-msgid "Posts"
-msgstr "Посты"
-
-#: blog/models.py:24
-msgid "Draft"
-msgstr "Черновик"
-
-#: blog/models.py:25 blog/templates/blog/post/detail.html:11
-#: blog/templates/blog/post/list.html:13
-msgid "Published"
-msgstr "Опубликован"
-
-#: blog/models.py:31
-msgid "Title"
-msgstr "Название"
-
-#: blog/models.py:34
-msgid "Slug"
-msgstr "Слаг"
-
-#: blog/models.py:36 blog/models.py:96
-msgid "Body"
-msgstr "Тело"
-
-#: blog/models.py:39
-msgid "Published date"
-msgstr "Дата публикации"
-
-#: blog/models.py:43 blog/models.py:98
-msgid "Created date"
-msgstr "Дата создания"
-
-#: blog/models.py:47 blog/models.py:101
-msgid "Updated date"
-msgstr "Дата обновления"
-
-#: blog/models.py:53 blog/models.py:104
-msgid "Status"
-msgstr "Статус"
-
-#: blog/models.py:59
-msgid "Author"
-msgstr "Автор"
-
-#: blog/models.py:83 blog/templates/blog/post/detail.html:21
-msgid "Comment"
-msgstr "Комментарий"
-
-#: blog/models.py:84
-msgid "Comments"
-msgstr "Комментарии"
-
-#: blog/models.py:93
+#: blog/forms.py:8 blog/models.py:95
 msgid "Name"
 msgstr "Имя"
 
-#: blog/models.py:95
+#: blog/forms.py:9
+msgid "From"
+msgstr "От"
+
+#: blog/forms.py:10
+msgid "To"
+msgstr "К"
+
+#: blog/forms.py:12 blog/models.py:85 blog/templates/blog/post/detail.html:21
+msgid "Comment"
+msgstr "Комментарий"
+
+#: blog/models.py:21 blog/models.py:92
+msgid "Post"
+msgstr "Пост"
+
+#: blog/models.py:22
+msgid "Posts"
+msgstr "Посты"
+
+#: blog/models.py:25
+msgid "Draft"
+msgstr "Черновик"
+
+#: blog/models.py:26 blog/templates/blog/post/detail.html:11
+#: blog/templates/blog/post/list.html:21
+msgid "Published"
+msgstr "Опубликован"
+
+#: blog/models.py:33
+msgid "Title"
+msgstr "Название"
+
+#: blog/models.py:36
+msgid "Slug"
+msgstr "Слаг"
+
+#: blog/models.py:38 blog/models.py:98
+msgid "Body"
+msgstr "Тело"
+
+#: blog/models.py:41
+msgid "Published date"
+msgstr "Дата публикации"
+
+#: blog/models.py:45 blog/models.py:100
+msgid "Created date"
+msgstr "Дата создания"
+
+#: blog/models.py:49 blog/models.py:103
+msgid "Updated date"
+msgstr "Дата обновления"
+
+#: blog/models.py:55 blog/models.py:106
+msgid "Status"
+msgstr "Статус"
+
+#: blog/models.py:61
+msgid "Author"
+msgstr "Автор"
+
+#: blog/models.py:86
+msgid "Comments"
+msgstr "Комментарии"
+
+#: blog/models.py:97
 msgid "E-mail"
 msgstr "Почта"
 
-#: blog/models.py:108
+#: blog/models.py:110
 #, python-brace-format
 msgid "Comment by {name} on {post}"
 msgstr "Комментарий от {name} к {post}"
@@ -103,7 +111,7 @@ msgid "This is my blog"
 msgstr "Это мой блог"
 
 #: blog/templates/blog/post/comment.html:4
-#: blog/templates/blog/post/includes/comment_form.html:7
+#: blog/templates/blog/post/includes/comment_form.html:9
 msgid "Add a comment"
 msgstr "Добавить комментарий"
 
@@ -117,9 +125,9 @@ msgstr "Вернуться к посту"
 
 #: blog/templates/blog/post/detail.html:11
 #: blog/templates/blog/post/detail.html:21
-#: blog/templates/blog/post/list.html:13
+#: blog/templates/blog/post/list.html:21
 msgid "by"
-msgstr ","
+msgstr "от"
 
 #: blog/templates/blog/post/detail.html:15
 msgid "Share this post"
@@ -144,6 +152,14 @@ msgstr "Добавить новый комментарий"
 #: blog/templates/blog/post/list.html:5 blog/templates/blog/post/list.html:9
 msgid "My Blog"
 msgstr "Мой Блог"
+
+#: blog/templates/blog/post/list.html:11
+msgid "Posts tagged with"
+msgstr "Посты с тегом"
+
+#: blog/templates/blog/post/list.html:16
+msgid "Tags"
+msgstr "Теги"
 
 #: blog/templates/blog/post/share.html:4
 msgid "Share a post"

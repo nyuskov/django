@@ -1,16 +1,30 @@
 from django.core.mail import send_mail
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, TemplateView, FormView
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from taggit.models import Tag  # type: ignore
 
 from .forms import EmailPostForm, CommentForm
 from .models import Post
 
 
 class PostListView(ListView):
-    queryset = Post.published.all()
+    queryset = Post.published.none()
     context_object_name = "posts"
     paginate_by = 3
     template_name = "blog/post/list.html"
+
+    def get_context_data(self, **kwargs):
+        tag_slug = self.kwargs.get("tag_slug")
+        tag = None
+        object_list = Post.published.all()
+        if tag_slug:
+            tag = get_object_or_404(Tag, slug=tag_slug)
+            object_list = Post.objects.filter(tags__in=[tag])
+
+        return super().get_context_data(
+            tag=tag, object_list=object_list, **kwargs
+        )
 
 
 class PostCommentView(TemplateView):

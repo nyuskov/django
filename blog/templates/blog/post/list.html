@@ -7,8 +7,16 @@
 
 {% block content %}
   <h1>{% translate 'My Blog' %}</h1>
+  {% if tag %}
+    <h2>{% translate 'Posts tagged with' %} {{ tag.name }}</h2>
+  {% endif %}
   {% for post in posts %}
     <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+    <p class="tags">
+      {% translate 'Tags' %}:{% for tag in post.tags.all %}
+        <a href="{% url 'blog:post_list_by_tag' tag.slug %}">{{ tag.name }}</a>{% if not forloop.last %}, {% endif %}
+      {% endfor %}
+    </p>
     <p class="date">
       {% translate 'Published' %} {{ post.publish }} {% translate 'by' %} {{ post.author }}
     </p>
