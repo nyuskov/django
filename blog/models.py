@@ -4,6 +4,7 @@ from django.db import models
 from django.urls import reverse
 from django.utils import timezone
 from django.utils.translation import gettext as _
+from taggit.managers import TaggableManager  # type: ignore
 
 
 class PublishedManager(models.Manager):
@@ -24,6 +25,7 @@ class Post(models.Model):
         DRAFT = "DF", _("Draft")
         PUBLISHED = "PB", _("Published")
 
+    tags: TaggableManager = TaggableManager()
     objects = models.Manager()
     published = PublishedManager()
     title: models.CharField = models.CharField(
