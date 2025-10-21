@@ -72,3 +72,39 @@ class Post(models.Model):
                 self.slug,
             ],
         )
+
+
+class Comment(models.Model):
+    class Meta:
+        ordering = ["created"]
+        indexes = [
+            models.Index(fields=["created"]),
+        ]
+        verbose_name: str = _("Comment")
+        verbose_name_plural: str = _("Comments")
+
+    post: models.ForeignKey = models.ForeignKey(
+        Post,
+        on_delete=models.CASCADE,
+        related_name="comments",
+        verbose_name=_("Post"),
+    )
+    name: models.CharField = models.CharField(
+        max_length=80, verbose_name=_("Name")
+    )
+    email: models.EmailField = models.EmailField(verbose_name=_("E-mail"))
+    body: models.TextField = models.TextField(verbose_name=_("Body"))
+    created: models.DateTimeField = models.DateTimeField(
+        auto_now_add=True, verbose_name=_("Created date")
+    )
+    updated: models.DateTimeField = models.DateTimeField(
+        auto_now=True, verbose_name=_("Updated date")
+    )
+    active: models.BooleanField = models.BooleanField(
+        default=True, verbose_name=_("Status")
+    )
+
+    def __str__(self):
+        return _("Comment by {name} on {post}").format(
+            name=self.name, post=self.post.title
+        )

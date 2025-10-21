@@ -1,11 +1,9 @@
 from django.core.mail import send_mail
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView
+from django.views.generic import ListView, TemplateView, FormView
 
+from .forms import EmailPostForm, CommentForm
 from .models import Post
-
-
-from .forms import EmailPostForm
 
 
 class PostListView(ListView):
@@ -15,17 +13,41 @@ class PostListView(ListView):
     template_name = "blog/post/list.html"
 
 
-def post_share(request, post_id):
-    # Retrieve post by id
-    post = get_object_or_404(
-        Post,
-        id=post_id,
-        status=Post.Status.PUBLISHED,
-    )
-    sent = False
-    if request.method == "POST":
+class PostCommentView(TemplateView):
+    def post(self, request, post_id, *args, **kwargs):
+        post = get_object_or_404(Post, id=post_id, status=Post.Status.PUBLISHED)
+        comment = None
+        # A comment was posted
+        form = CommentForm(data=request.POST)
+        if form.is_valid():
+            # Create a Comment object without saving it to the database
+            comment = form.save(commit=False)
+            # Assign the post to the comment
+            comment.post = post
+            # Save the comment to the database
+            comment.save()
+        return render(
+            request,
+            "blog/post/comment.html",
+            {"post": post, "form": form, "comment": comment},
+        )
+
+
+class PostShareView(FormView):
+    form_class = EmailPostForm
+    template_name = "blog/post/share.html"
+
+    def post(self, request, post_id, *args, **kwargs):
+        # Retrieve post by id
+        post = get_object_or_404(
+            Post,
+            id=post_id,
+            status=Post.Status.PUBLISHED,
+        )
+        sent = False
+
         # Form was submitted
-        form = EmailPostForm(request.POST)
+        form = self.form_class(request.POST)
         if form.is_valid():
             # Form fields passed validation
             cd = form.cleaned_data
@@ -45,28 +67,38 @@ def post_share(request, post_id):
                 recipient_list=[cd["to"]],
             )
             sent = True
-    else:
-        form = EmailPostForm()
 
-    return render(
-        request,
-        "blog/post/share.html",
-        {
-            "post": post,
-            "form": form,
-            "sent": sent,
-        },
-    )
+        context = {"post": post, "form": form, "sent": sent}
+
+        return render(
+            request,
+            self.template_name,
+            context,
+        )
 
 
-def post_detail(request, year, month, day, post):
-    post = get_object_or_404(
-        Post,
-        status=Post.Status.PUBLISHED,
-        slug=post,
-        publish__year=year,
-        publish__month=month,
-        publish__day=day,
-    )
+class PostDetailView(FormView):
+    form_class = CommentForm
+    template_name = "blog/post/detail.html"
 
-    return render(request, "blog/post/detail.html", {"post": post})
+    def get(self, request, year, month, day, post, *args, **kwargs):
+        post = get_object_or_404(
+            Post,
+            status=Post.Status.PUBLISHED,
+            slug=post,
+            publish__year=year,
+            publish__month=month,
+            publish__day=day,
+        )
+
+        # List of active comments for this post
+        comments = post.comments.filter(active=True)
+        # Form for users to comment
+        form = self.form_class()
+        context = {"post": post, "comments": comments, "form": form}
+
+        return render(
+            request,
+            self.template_name,
+            context,
+        )

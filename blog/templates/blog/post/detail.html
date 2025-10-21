@@ -14,4 +14,19 @@
   <p>
     <a href="{% url 'blog:post_share' post.id %}">{% translate 'Share this post' %}</a>
   </p>
+  <h2>{% blocktranslate count comments.count as total_comments %}{{ total_comments }} comment{% plural %}{{ total_comments }} comments{% endblocktranslate %}</h2>
+  {% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        {% translate 'Comment' %} {{ forloop.counter }} {% translate 'by' %} {{ comment.name }}
+        {{ comment.created }}
+      </p>
+      {{ comment.body|linebreaks }}
+    </div>
+  {% empty %}
+    <p>
+      {% translate 'There are no comments' %}.
+    </p>
+  {% endfor %}
+  {% include 'blog/post/includes/comment_form.html' %}
 {% endblock %}
