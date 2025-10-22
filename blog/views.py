@@ -1,7 +1,7 @@
 from django.core.mail import send_mail
+from django.db.models import Count
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView, TemplateView, FormView
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.views.generic import ListView, FormView
 from taggit.models import Tag  # type: ignore
 
 from .forms import EmailPostForm, CommentForm
@@ -27,12 +27,15 @@ class PostListView(ListView):
         )
 
 
-class PostCommentView(TemplateView):
+class PostCommentView(FormView):
+    form_class = CommentForm
+    template_name = "blog/post/comment.html"
+
     def post(self, request, post_id, *args, **kwargs):
         post = get_object_or_404(Post, id=post_id, status=Post.Status.PUBLISHED)
         comment = None
         # A comment was posted
-        form = CommentForm(data=request.POST)
+        form = self.form_class(data=request.POST)
         if form.is_valid():
             # Create a Comment object without saving it to the database
             comment = form.save(commit=False)
@@ -42,7 +45,7 @@ class PostCommentView(TemplateView):
             comment.save()
         return render(
             request,
-            "blog/post/comment.html",
+            self.template_name,
             {"post": post, "form": form, "comment": comment},
         )
 
@@ -95,24 +98,28 @@ class PostDetailView(FormView):
     form_class = CommentForm
     template_name = "blog/post/detail.html"
 
-    def get(self, request, year, month, day, post, *args, **kwargs):
+    def get_context_data(self, **kwargs):
         post = get_object_or_404(
             Post,
             status=Post.Status.PUBLISHED,
-            slug=post,
-            publish__year=year,
-            publish__month=month,
-            publish__day=day,
+            slug=self.kwargs.get("post"),
+            publish__year=self.kwargs.get("year"),
+            publish__month=self.kwargs.get("month"),
+            publish__day=self.kwargs.get("day"),
         )
 
         # List of active comments for this post
         comments = post.comments.filter(active=True)
-        # Form for users to comment
-        form = self.form_class()
-        context = {"post": post, "comments": comments, "form": form}
 
-        return render(
-            request,
-            self.template_name,
-            context,
+        # List of similar posts
+        post_tags_ids = post.tags.values_list("id", flat=True)
+        similar_posts = Post.published.filter(tags__in=post_tags_ids).exclude(
+            id=post.id
+        )
+        similar_posts = similar_posts.annotate(
+            same_tags=Count("tags")
+        ).order_by("-same_tags", "-publish")[:4]
+
+        return super().get_context_data(
+            post=post, comments=comments, similar_posts=similar_posts, **kwargs
         )

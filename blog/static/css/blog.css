@@ -4,11 +4,6 @@ body {
     font-family: helvetica, sans-serif;
 }
 
-a {
-    color: #00abff;
-    text-decoration: none;
-}
-
 h1 {
     font-weight: normal;
     border-bottom: 1px solid #bbb;
@@ -18,20 +13,6 @@ h1 {
 h2 {
     font-weight: normal;
     margin: 30px 0 0;
-}
-
-#content {
-    float: left;
-    width: 60%;
-    padding: 0 0 0 30px;
-}
-
-#sidebar {
-    float: right;
-    width: 30%;
-    padding: 10px;
-    background: #efefef;
-    height: 100%;
 }
 
 p.date {
@@ -44,6 +25,11 @@ p.date {
 .left {
     float: left;
     margin-right: 10px;
+}
+
+.link {
+    color: #00abff;
+    text-decoration: none;
 }
 
 /* pagination */
@@ -69,6 +55,7 @@ textarea {
     border: 0;
     padding: 6px 10px;
     font-size: 12px;
+    resize: none;
 }
 
 input[type=submit] {
@@ -105,4 +92,49 @@ input[type=submit] {
 
 .tags {
     color: #666;
+}
+
+.separator {
+    margin-left: 250px;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    border: solid #f9f9f9;
+    width: 75%;
+}
+
+#mySidebar::-webkit-scrollbar {
+    width: 7px;
+    background-color: #aeaeae;
+}
+
+#mySidebar::-webkit-scrollbar-thumb {
+    background-color: #cecece;
+}
+
+#mySidebar::-webkit-scrollbar-track {
+    -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+    background-color: #f9f9f9;
+}
+
+.side-block {
+    width: 12.5%;
+}
+
+.sidebar {
+    width: 250px !important;
+}
+
+.sidebar-content {
+    box-shadow: inset 1px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* w3 */
+.overlay {
+    cursor: pointer;
 }

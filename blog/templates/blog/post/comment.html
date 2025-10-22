@@ -7,7 +7,7 @@
   {% if comment %}
     <h2>{% translate 'Your comment has been added' %}.</h2>
     <p>
-      <a href="{{ post.get_absolute_url }}">{% translate 'Back to the post' %}</a>
+      <a href="{{ post.get_absolute_url }}" class="link">{% translate 'Back to the post' %}</a>
     </p>
   {% else %}
     {% include 'blog/post/includes/comment_form.html' %}
