@@ -54,6 +54,7 @@ INTERNAL_IPS = [
 # Application definition
 
 INSTALLED_APPS = [
+    "account.apps.AccountConfig",  # because of templates searching
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
