@@ -1,11 +1,46 @@
+from django.contrib.postgres.search import (
+    SearchVector,
+    SearchQuery,
+    SearchRank,
+    TrigramSimilarity,
+)
 from django.core.mail import send_mail
 from django.db.models import Count
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, FormView
 from taggit.models import Tag  # type: ignore
 
-from .forms import EmailPostForm, CommentForm
+from .forms import EmailPostForm, CommentForm, SearchForm
 from .models import Post
+
+
+class PostSearchView(FormView):
+    form_class = SearchForm
+    template_name = "blog/post/search.html"
+
+    def get_context_data(self, **kwargs):
+        form = self.form_class()
+        query = None
+        results = []
+        if "query" in self.request.GET:
+            form = self.form_class(self.request.GET)
+            if form.is_valid():
+                query = form.cleaned_data["query"]
+                # search_vector = SearchVector(
+                #     "title", weight="A"
+                # ) + SearchVector("body", weight="B")
+                # search_query = SearchQuery(query)
+                results = (
+                    Post.published.annotate(
+                        similarity=TrigramSimilarity("title", query),
+                    )
+                    .filter(similarity__gt=0.1)
+                    .order_by("-similarity")
+                )
+
+        return super().get_context_data(
+            form=form, query=query, results=results, **kwargs
+        )
 
 
 class PostListView(ListView):
