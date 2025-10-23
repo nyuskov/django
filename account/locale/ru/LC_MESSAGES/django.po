@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-23 08:27+0000\n"
+"POT-Creation-Date: 2025-10-23 12:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,6 +20,42 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
+#: account/forms.py:25
+msgid "Password"
+msgstr "Пароль"
+
+#: account/forms.py:27
+msgid "Repeat password"
+msgstr "Повторите пароль"
+
+#: account/forms.py:33
+msgid "Passwords don't match."
+msgstr "Пароли не совпадают."
+
+#: account/models.py:8
+msgid "Profile"
+msgstr "Профиль"
+
+#: account/models.py:9
+msgid "Profiles"
+msgstr "Профили"
+
+#: account/models.py:13
+msgid "User"
+msgstr "Пользователь"
+
+#: account/models.py:16
+msgid "Date of birth"
+msgstr "Дата рождения"
+
+#: account/models.py:18
+msgid "Photo"
+msgstr "Фото"
+
+#: account/models.py:22
+msgid "Profile of"
+msgstr "Профиль пользователя"
+
 #: account/templates/account/dashboard.html:4
 #: account/templates/account/dashboard.html:7
 msgid "Dashboard"
@@ -29,33 +65,88 @@ msgstr "Панель инструментов"
 msgid "Welcome to your dashboard"
 msgstr "Добро пожаловать на вашу панель инструментов"
 
-#: account/templates/base.html:16
+#: account/templates/account/dashboard.html:10
+#: account/templates/registration/logged_out.html:10
+msgid "You can"
+msgstr "Вы можете"
+
+#: account/templates/account/dashboard.html:10
+msgid "edit your profile"
+msgstr "редактировать ваш профиль"
+
+#: account/templates/account/dashboard.html:11
+msgid "or"
+msgstr "или"
+
+#: account/templates/account/dashboard.html:11
+msgid "change your password"
+msgstr "изменить свой пароль"
+
+#: account/templates/account/edit.html:4 account/templates/account/edit.html:7
+msgid "Edit your account"
+msgstr "Редактировать мой аккаунт"
+
+#: account/templates/account/edit.html:9
+msgid "You can edit your account using the following form"
+msgstr "Вы можете редактировать свой аккаунт с помощью следующей формы"
+
+#: account/templates/account/edit.html:16
+msgid "Save changes"
+msgstr "Сохранить изменения"
+
+#: account/templates/account/register.html:4
+#: account/templates/account/register.html:7
+msgid "Create an account"
+msgstr "Создать аккаунт"
+
+#: account/templates/account/register.html:9
+msgid "Please, sign up using the following form"
+msgstr "Пожалуйста, используйте следующую форму для регистрации"
+
+#: account/templates/account/register.html:15
+msgid "Create my account"
+msgstr "Создать мой аккаунт"
+
+#: account/templates/account/register_done.html:4
+#: account/templates/account/register_done.html:7
+msgid "Welcome"
+msgstr "Добро пожаловать"
+
+#: account/templates/account/register_done.html:9
+msgid "Your account has been successfully created. Now you can"
+msgstr "Ваш аккаунт успешно создан. Вы можете"
+
+#: account/templates/account/register_done.html:9
+msgid "log-in"
+msgstr "войти"
+
+#: account/templates/base.html:17
 msgid "Bookmarks"
 msgstr "Закладки"
 
-#: account/templates/base.html:20
+#: account/templates/base.html:21
 msgid "My dashboard"
 msgstr "Моя панель инструментов"
 
-#: account/templates/base.html:23
+#: account/templates/base.html:24
 msgid "Images"
 msgstr "Изображения"
 
-#: account/templates/base.html:26
+#: account/templates/base.html:27
 msgid "People"
 msgstr "Люди"
 
-#: account/templates/base.html:32
+#: account/templates/base.html:33
 msgid "Hello"
 msgstr "Привет"
 
-#: account/templates/base.html:33
+#: account/templates/base.html:34
 msgid "Logout"
 msgstr "Выйти"
 
-#: account/templates/base.html:37 account/templates/registration/login.html:4
+#: account/templates/base.html:38 account/templates/registration/login.html:4
 #: account/templates/registration/login.html:7
-#: account/templates/registration/login.html:19
+#: account/templates/registration/login.html:22
 msgid "Log-in"
 msgstr "Войти"
 
@@ -69,10 +160,6 @@ msgid "You have been successfully logged out."
 msgstr "Вы успешно вышли из системы."
 
 #: account/templates/registration/logged_out.html:10
-msgid "You can"
-msgstr "Вы можете"
-
-#: account/templates/registration/logged_out.html:10
 msgid "log-in again"
 msgstr "войти снова"
 
@@ -80,7 +167,15 @@ msgstr "войти снова"
 msgid "Please, use the following form to log-in"
 msgstr "Пожалуйста, используйте следующую форму для входа"
 
-#: account/templates/registration/login.html:23
+#: account/templates/registration/login.html:13
+msgid "If you don't have an account"
+msgstr "Если у вас нет аккаунта, вы можете"
+
+#: account/templates/registration/login.html:13
+msgid "register here"
+msgstr "зарегестрироваться здесь"
+
+#: account/templates/registration/login.html:26
 #: account/templates/registration/password_reset_form.html:7
 msgid "Forgotten your password"
 msgstr "Забыли свой пароль"
@@ -140,18 +235,22 @@ msgstr "Изменить мой пароль"
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used. Please request a new password reset"
-msgstr "Ссылка для сброса пароля невалидна, возможно, потому что она уже "
+msgstr ""
+"Ссылка для сброса пароля невалидна, возможно, потому что она уже "
 "использована. Пожалуйста, запросите сброс пароля заново"
+
 #: account/templates/registration/password_reset_done.html:9
 msgid "We've emailed you instructions for setting your password"
-msgstr "Мы отправили вам инструкцию по установке пароля на вашу электронную почту"
+msgstr ""
+"Мы отправили вам инструкцию по установке пароля на вашу электронную почту"
 
 #: account/templates/registration/password_reset_done.html:12
 msgid ""
 "If you don't receive an email, please make sure you've entered the address "
 "you registered with"
-msgstr "Если вы не получили письмо, убедитесь, что вы ввели адрес, "
-"указанный при регистрации"
+msgstr ""
+"Если вы не получили письмо, убедитесь, что вы ввели адрес, указанный при "
+"регистрации"
 
 #: account/templates/registration/password_reset_email.html:2
 msgid "Someone asked for password reset for email"

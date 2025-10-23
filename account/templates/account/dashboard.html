@@ -6,6 +6,9 @@
 {% block content %}
   <h1>{% trans 'Dashboard' %}</h1>
   <p>
-    {% trans 'Welcome to your dashboard' %}.
+    {% trans 'Welcome to your dashboard' %}. <span>
+      {% translate 'You can' %} <a href="{% url 'account:edit' %}">{% translate 'edit your profile' %}</a>
+      {% translate 'or' %} <a href="{% url 'account:password_change' %}">{% translate 'change your password' %}</a>.
+    </span>
   </p>
 {% endblock %}

@@ -9,7 +9,7 @@
       {% endblock %}
     </title>
     <link href="{% static 'css/base.css' %}" rel="stylesheet" />
-    <link href="{% static 'css/w3.css' %}" rel="stylesheet" />
+    {% comment %} <link href="{% static 'css/w3.css' %}" rel="stylesheet" /> {% endcomment %}
   </head>
   <body>
     <div id="header">
@@ -29,7 +29,7 @@
       {% endif %}
       <span class="user">
         {% if request.user.is_authenticated %}
-          {% trans 'Hello' %} {{ request.user.first_name|default:request.user.username }},<form action="{% url 'account:logout' %}" method="post">
+          {% trans 'Hello' %}, {{ request.user.first_name|default:request.user.username }}!<form action="{% url 'account:logout' %}" method="post">
             <button type="submit">{% trans 'Logout' %}</button>
             {% csrf_token %}
           </form>
