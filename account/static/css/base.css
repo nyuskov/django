@@ -140,6 +140,7 @@ textarea {
 input[type=submit],
 a.button {
     font-weight: bold;
+    cursor: pointer;
     background: #12c064;
     color: #fff;
     padding: 10px 20px;
@@ -369,9 +370,4 @@ img.user-detail {
 .action .date {
     font-style: italic;
     color: #ccc;
-}
-
-/* button */
-.button {
-    cursor: pointer;
 }

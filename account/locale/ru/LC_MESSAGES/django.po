@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-23 06:26+0000\n"
+"POT-Creation-Date: 2025-10-23 08:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,6 +59,116 @@ msgstr "Выйти"
 msgid "Log-in"
 msgstr "Войти"
 
+#: account/templates/registration/logged_out.html:4
+#: account/templates/registration/logged_out.html:7
+msgid "Logged out"
+msgstr "Вышел из системы"
+
+#: account/templates/registration/logged_out.html:9
+msgid "You have been successfully logged out."
+msgstr "Вы успешно вышли из системы."
+
+#: account/templates/registration/logged_out.html:10
+msgid "You can"
+msgstr "Вы можете"
+
+#: account/templates/registration/logged_out.html:10
+msgid "log-in again"
+msgstr "войти снова"
+
 #: account/templates/registration/login.html:10
 msgid "Please, use the following form to log-in"
 msgstr "Пожалуйста, используйте следующую форму для входа"
+
+#: account/templates/registration/login.html:23
+#: account/templates/registration/password_reset_form.html:7
+msgid "Forgotten your password"
+msgstr "Забыли свой пароль"
+
+#: account/templates/registration/password_change_done.html:4
+#: account/templates/registration/password_change_done.html:7
+msgid "Password changed"
+msgstr "Пароль изменён"
+
+#: account/templates/registration/password_change_done.html:9
+msgid "Your password has been successfully changed"
+msgstr "Вы успешно вышли из системы."
+
+#: account/templates/registration/password_change_form.html:4
+#: account/templates/registration/password_change_form.html:7
+msgid "Change your password"
+msgstr "Изменить свой пароль"
+
+#: account/templates/registration/password_change_form.html:9
+msgid "Use the form below to change your password"
+msgstr "Изспользуйте форму ниже, чтобы изменить свой пароль"
+
+#: account/templates/registration/password_change_form.html:14
+msgid "Change"
+msgstr "Изменить"
+
+#: account/templates/registration/password_reset_complete.html:4
+#: account/templates/registration/password_reset_complete.html:7
+msgid "Password reset"
+msgstr "Сброс пароля"
+
+#: account/templates/registration/password_reset_complete.html:9
+msgid "Your password has been reset. You can"
+msgstr "Ваш пароль был сброшен. Вы можете"
+
+#: account/templates/registration/password_reset_complete.html:9
+msgid "log-in now"
+msgstr "войти сейчас"
+
+#: account/templates/registration/password_reset_confirm.html:4
+#: account/templates/registration/password_reset_confirm.html:7
+#: account/templates/registration/password_reset_done.html:4
+#: account/templates/registration/password_reset_done.html:7
+#: account/templates/registration/password_reset_form.html:4
+msgid "Reset your password"
+msgstr "Сбросить свой пароль"
+
+#: account/templates/registration/password_reset_confirm.html:10
+msgid "Please enter your new password twice"
+msgstr "Пожалуйста, введите свой пароль дважды"
+
+#: account/templates/registration/password_reset_confirm.html:16
+msgid "Change my password"
+msgstr "Изменить мой пароль"
+
+#: account/templates/registration/password_reset_confirm.html:21
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used. Please request a new password reset"
+msgstr "Ссылка для сброса пароля невалидна, возможно, потому что она уже "
+"использована. Пожалуйста, запросите сброс пароля заново"
+#: account/templates/registration/password_reset_done.html:9
+msgid "We've emailed you instructions for setting your password"
+msgstr "Мы отправили вам инструкцию по установке пароля на вашу электронную почту"
+
+#: account/templates/registration/password_reset_done.html:12
+msgid ""
+"If you don't receive an email, please make sure you've entered the address "
+"you registered with"
+msgstr "Если вы не получили письмо, убедитесь, что вы ввели адрес, "
+"указанный при регистрации"
+
+#: account/templates/registration/password_reset_email.html:2
+msgid "Someone asked for password reset for email"
+msgstr "Кто-то просил сбросить пароль для адреса"
+
+#: account/templates/registration/password_reset_email.html:3
+msgid "Follow the link below"
+msgstr "Пройдите по ссылке ниже"
+
+#: account/templates/registration/password_reset_email.html:5
+msgid "Your username, in case you've forgotten"
+msgstr "Ваш username, если вы его забыли"
+
+#: account/templates/registration/password_reset_form.html:9
+msgid "Enter your e-mail address to obtain a new password"
+msgstr "Введите ваш адрес электронной почты для получения нового пароля"
+
+#: account/templates/registration/password_reset_form.html:14
+msgid "Send e-mail"
+msgstr "Отправить на почту"
