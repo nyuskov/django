@@ -9,6 +9,9 @@
     <p>
       {% trans 'Please, use the following form to log-in' %}:
     </p>
+    <p>
+      {% trans "If you don't have an account" %} <a href="{% url 'account:register' %}">{% trans 'register here' %}</a>.
+    </p>
   {% endif %}
   <div class="login-form">
     <form action="{% url 'account:login' %}" method="post">
