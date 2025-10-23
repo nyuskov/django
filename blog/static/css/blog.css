@@ -28,7 +28,7 @@ p.date {
 }
 
 .link {
-    color: #00abff;
+    color: #12c064;
     text-decoration: none;
 }
 
@@ -137,4 +137,15 @@ input[type=submit] {
 /* w3 */
 .overlay {
     cursor: pointer;
+}
+
+/* button */
+input[type=submit],
+a.button {
+    font-weight: bold;
+    background: #12c064;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 14px;
+    text-transform: uppercase;
 }

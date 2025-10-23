@@ -17,19 +17,19 @@
       <!-- Sidebar -->
       <div class="w3-sidebar w3-bar-block sidebar" style="display:none; z-index:5" id="mySidebar">
         <button class="w3-bar-item w3-button w3-xxlarge" onclick="w3_close()"><i>&times;</i></button>
-        <a href="{% url 'blog:post_list' %}" class="w3-bar-item w3-button">{% translate 'Posts' %}</a>
-        <a href="{% url 'blog:post_search' %}" class="w3-bar-item w3-button">{% translate 'Search' %}</a>
+        <a href="{% url 'blog:post_list' %}" class="w3-bar-item w3-button">{% trans 'Posts' %}</a>
+        <a href="{% url 'blog:post_search' %}" class="w3-bar-item w3-button">{% trans 'Search' %}</a>
         <div class="w3-panel w3-display-container sidebar-content">
-          <h2>{% translate 'My blog' %}</h2>
+          <h2>{% trans 'My blog' %}</h2>
           <p>
-            {% translate 'This is my blog' %} {% translate "I've written" %} {% total_posts %} {% translate 'posts so far' %}
+            {% trans 'This is my blog' %} {% trans "I've written" %} {% total_posts %} {% trans 'posts so far' %}
           </p>
           <p>
-            <a href="{% url 'blog:post_feed' %}" class="link">{% translate 'Subscribe to my RSS feed' %}</a>
+            <a href="{% url 'blog:post_feed' %}" class="link">{% trans 'Subscribe to my RSS feed' %}</a>
           </p>
-          <h3>{% translate 'Latest posts' %}</h3>
+          <h3>{% trans 'Latest posts' %}</h3>
           {% show_latest_posts 3 %}
-          <h3>{% translate 'Most commented posts' %}</h3>
+          <h3>{% trans 'Most commented posts' %}</h3>
           {% get_most_commented_posts 3 as most_commented_posts %}
           <ul>
             {% for post in most_commented_posts %}
@@ -43,7 +43,7 @@
       <!-- Page Content -->
       <main class="main" id="mainContent">
         <div class="side-block">
-          <button class="w3-button w3-white w3-xxlarge menu-button" onclick="w3_open()">&#9776;</button>
+          <button class="w3-xxlarge w3-button" onclick="w3_open()">&#9776;</button>
         </div>
         <div class="w3-overlay overlay" onclick="w3_close()" id="myOverlay"></div>
         <div id="content" class="w3-container content">

@@ -1,7 +1,7 @@
 from django.contrib.postgres.search import (
-    SearchVector,
-    SearchQuery,
-    SearchRank,
+    # SearchVector,
+    # SearchQuery,
+    # SearchRank,
     TrigramSimilarity,
 )
 from django.core.mail import send_mail

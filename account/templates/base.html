@@ -1,0 +1,47 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      {% block title %}
+
+      {% endblock %}
+    </title>
+    <link href="{% static 'css/base.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/w3.css' %}" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="header">
+      <span class="logo">{% trans 'Bookmarks' %}</span>
+      {% if request.user.is_authenticated %}
+        <ul class="menu">
+          <li class="{% if section == 'dashboard' %}selected{% endif %}">
+            <a href="{% url 'account:dashboard' %}">{% trans 'My dashboard' %}</a>
+          </li>
+          <li class="{% if section == 'images' %}selected{% endif %}">
+            <a href="#">{% trans 'Images' %}</a>
+          </li>
+          <li class="{% if section == 'people' %}selected{% endif %}">
+            <a href="#">{% trans 'People' %}</a>
+          </li>
+        </ul>
+      {% endif %}
+      <span class="user">
+        {% if request.user.is_authenticated %}
+          {% trans 'Hello' %} {{ request.user.first_name|default:request.user.username }},<form action="{% url 'account:logout' %}" method="post">
+            <button type="submit">{% trans 'Logout' %}</button>
+            {% csrf_token %}
+          </form>
+        {% else %}
+          <a href="{% url 'account:login' %}">{% trans 'Log-in' %}</a>
+        {% endif %}
+      </span>
+    </div>
+    <div id="content">
+      {% block content %}
+
+      {% endblock %}
+    </div>
+  </body>
+</html>

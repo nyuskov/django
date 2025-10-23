@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-20 16:48+0000\n"
+"POT-Creation-Date: 2025-10-22 15:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,15 +20,15 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: app/urls.py:26
+#: app/urls.py:33
 msgid "Project administration"
 msgstr "Администрирование проекта"
 
-#: app/urls.py:27
+#: app/urls.py:34
 msgid "Administrative site of project"
 msgstr "Административный сайт проекта"
 
-#: app/urls.py:28
+#: app/urls.py:35
 msgid "Site administration"
 msgstr "Администрирование сайта"
 
