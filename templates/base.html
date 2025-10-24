@@ -8,22 +8,29 @@
 
       {% endblock %}
     </title>
-    <link href="{% static 'css/account.css' %}" rel="stylesheet" />
-    {% comment %} <link href="{% static 'css/w3.css' %}" rel="stylesheet" /> {% endcomment %}
+    <link href="{% static 'css/app.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'css/w3.css' %}" />
+    <script src="{% static 'js/main.js' %}"></script>
+    {% block source %}
+
+    {% endblock %}
   </head>
   <body>
     <div id="header">
       <span class="logo">{% trans 'Bookmarks' %}</span>
       {% if request.user.is_authenticated %}
         <ul class="menu">
-          <li class="{% if section == 'dashboard' %}selected{% endif %}">
+          <li id="dashboard">
             <a href="{% url 'account:dashboard' %}">{% trans 'My dashboard' %}</a>
           </li>
-          <li class="{% if section == 'images' %}selected{% endif %}">
+          <li id="images">
             <a href="#">{% trans 'Images' %}</a>
           </li>
-          <li class="{% if section == 'people' %}selected{% endif %}">
+          <li id="people">
             <a href="#">{% trans 'People' %}</a>
+          </li>
+          <li id="blog">
+            <a href="{% url 'blog:post_list' %}">{% trans 'Blog' %}</a>
           </li>
         </ul>
       {% endif %}
@@ -38,6 +45,16 @@
         {% endif %}
       </span>
     </div>
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+          <li class="{{ message.tags }}">
+            {{ message|safe }}
+            <a href="#" class="close">x</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
     <div id="content">
       {% block content %}
 

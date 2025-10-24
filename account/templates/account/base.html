@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block source %}
+  <link href="{% static 'css/account.css' %}" rel="stylesheet" />
+  {% comment %} <link href="{% static 'css/w3.css' %}" rel="stylesheet" /> {% endcomment %}
+{% endblock %}
+{% block content %}
+  {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+        <li class="{{ message.tags }}">
+          {{ message|safe }}
+          <a href="#" class="close">x</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  <div id="account_content">
+    {% block account_content %}
+
+    {% endblock %}
+  </div>
+{% endblock %}

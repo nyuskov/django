@@ -4,7 +4,7 @@
 {% block title %}
   {% trans 'Search' %}
 {% endblock %}
-{% block content %}
+{% block blog_content %}
   {% if query %}
     <h1>{% trans 'Posts containing' %} {{ query }}</h1>
     <h3>{% blocktrans count results.count as total_results %}Found {{ total_results }} result{% plural %}Found {{ total_results }} results{% endblocktrans %}</h3>
