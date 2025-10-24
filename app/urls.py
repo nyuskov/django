@@ -46,13 +46,12 @@ urlpatterns = [
         {"sitemaps": sitemaps},
         name="django.contrib.sitemaps.views.sitemap",
     ),
-] + debug_toolbar_urls()
+    path(
+        "favicon.ico",
+        RedirectView.as_view(url=f"{settings.STATIC_URL}images/favicon.ico"),
+        name="favicon",
+    ),
+]
 
 if settings.DEBUG:
-    urlpatterns += [
-        path(
-            "favicon.ico",
-            RedirectView.as_view(url="/static/images/favicon.ico"),
-        ),
-    ]
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += debug_toolbar_urls()
