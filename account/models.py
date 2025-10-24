@@ -17,6 +17,11 @@ class Profile(models.Model):
     photo: models.ImageField = models.ImageField(
         upload_to="users/%Y/%m/%d/", blank=True, verbose_name=_("Photo")
     )
+    styles: models.FileField = models.FileField(
+        upload_to="styles/%Y/%m/%d/",
+        blank=True,
+        verbose_name=_("CSS styles"),
+    )
 
     def __str__(self):
         return f"{_("Profile of")} {self.user.username}"
