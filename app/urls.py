@@ -16,7 +16,6 @@ Including another URLconf
 """
 
 from django.conf import settings
-from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from debug_toolbar.toolbar import debug_toolbar_urls  # type: ignore
@@ -46,6 +45,7 @@ urlpatterns = [
         {"sitemaps": sitemaps},
         name="django.contrib.sitemaps.views.sitemap",
     ),
+    path("social-auth/", include("social_django.urls", namespace="social")),
     path(
         "favicon.ico",
         RedirectView.as_view(url=f"{settings.STATIC_URL}images/favicon.ico"),

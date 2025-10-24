@@ -14,13 +14,18 @@ import os
 from pathlib import Path
 from decouple import config  # type: ignore
 
+# OAuth2
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = config("GOOGLE_OAUTH2_KEY")
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = config("GOOGLE_OAUTH2_SECRET")
+
 # HTTPS
-# SESSION_COOKIE_SECURE = True
-# CSRF_COOKIE_SECURE = True
-# SESSION_COOKIE_HTTPONLY = True
-# CSRF_COOKIE_HTTPONLY = True
-# SESSION_COOKIE_SAMESITE = "Lax"
-# CSRF_COOKIE_SAMESITE = "Lax"
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_HTTPONLY = True
+CSRF_COOKIE_HTTPONLY = True
+SESSION_COOKIE_SAMESITE = "Lax"
+CSRF_COOKIE_SAMESITE = "Lax"
+CSRF_TRUSTED_ORIGINS = ["https://mysite.com", "https://localhost"]
 
 # Email server configuration
 EMAIL_HOST = "smtp.gmail.com"
@@ -49,7 +54,7 @@ SECRET_KEY = (
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["mysite.com", "localhost", "127.0.0.1"]
 
 INTERNAL_IPS = [
     "127.0.0.1",
@@ -69,8 +74,16 @@ INSTALLED_APPS = [
     "django.contrib.sites",
     "django.contrib.sitemaps",
     "debug_toolbar",
+    "django_extensions",
     "taggit",
+    "social_django",
     "blog.apps.BlogConfig",
+]
+
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+    "account.authentication.EmailAuthBackend",
+    "social_core.backends.google.GoogleOAuth2",
 ]
 
 MIDDLEWARE = [

@@ -2,9 +2,11 @@ document.addEventListener("DOMContentLoaded", function () {
   try {
     this.querySelectorAll("#header .menu li").classList.remove("selected");
   } catch {}
-  if (window.location.pathname.search("blog") != -1) {
-    this.querySelector("#blog").classList.add("selected");
-  } else if (window.location.pathname.search("account") != -1) {
-    this.querySelector("#dashboard").classList.add("selected");
-  }
+  try {
+    if (window.location.pathname.search("blog") != -1) {
+        this.querySelector("#blog").classList.add("selected");
+    } else if (window.location.pathname.search("account") != -1) {
+        this.querySelector("#dashboard").classList.add("selected");
+    }
+  } catch {}
 });

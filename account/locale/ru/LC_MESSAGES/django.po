@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-23 12:13+0000\n"
+"POT-Creation-Date: 2025-10-24 11:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,15 +20,19 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: account/forms.py:25
+#: account/forms.py:18 account/forms.py:47
+msgid "Email already in use."
+msgstr ""
+
+#: account/forms.py:33
 msgid "Password"
 msgstr "Пароль"
 
-#: account/forms.py:27
+#: account/forms.py:35
 msgid "Repeat password"
 msgstr "Повторите пароль"
 
-#: account/forms.py:33
+#: account/forms.py:41
 msgid "Passwords don't match."
 msgstr "Пароли не совпадают."
 
@@ -120,36 +124,6 @@ msgstr "Ваш аккаунт успешно создан. Вы можете"
 msgid "log-in"
 msgstr "войти"
 
-#: account/templates/base.html:17
-msgid "Bookmarks"
-msgstr "Закладки"
-
-#: account/templates/base.html:21
-msgid "My dashboard"
-msgstr "Моя панель инструментов"
-
-#: account/templates/base.html:24
-msgid "Images"
-msgstr "Изображения"
-
-#: account/templates/base.html:27
-msgid "People"
-msgstr "Люди"
-
-#: account/templates/base.html:33
-msgid "Hello"
-msgstr "Привет"
-
-#: account/templates/base.html:34
-msgid "Logout"
-msgstr "Выйти"
-
-#: account/templates/base.html:38 account/templates/registration/login.html:4
-#: account/templates/registration/login.html:7
-#: account/templates/registration/login.html:22
-msgid "Log-in"
-msgstr "Войти"
-
 #: account/templates/registration/logged_out.html:4
 #: account/templates/registration/logged_out.html:7
 msgid "Logged out"
@@ -163,6 +137,12 @@ msgstr "Вы успешно вышли из системы."
 msgid "log-in again"
 msgstr "войти снова"
 
+#: account/templates/registration/login.html:4
+#: account/templates/registration/login.html:7
+#: account/templates/registration/login.html:22
+msgid "Log-in"
+msgstr "Войти"
+
 #: account/templates/registration/login.html:10
 msgid "Please, use the following form to log-in"
 msgstr "Пожалуйста, используйте следующую форму для входа"
@@ -173,7 +153,7 @@ msgstr "Если у вас нет аккаунта, вы можете"
 
 #: account/templates/registration/login.html:13
 msgid "register here"
-msgstr "зарегестрироваться здесь"
+msgstr "зарегистрироваться здесь"
 
 #: account/templates/registration/login.html:26
 #: account/templates/registration/password_reset_form.html:7
@@ -271,3 +251,12 @@ msgstr "Введите ваш адрес электронной почты дл�
 #: account/templates/registration/password_reset_form.html:14
 msgid "Send e-mail"
 msgstr "Отправить на почту"
+
+#: account/views.py:48
+msgid "Profile updated successfully"
+msgstr ""
+
+#: account/views.py:50
+msgid "Error updating your profile"
+msgstr "Ошибка при обновлении вашего профиля"
+

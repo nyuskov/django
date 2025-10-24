@@ -15,7 +15,8 @@
     <div class="w3-panel w3-display-container sidebar-content">
       <h2>{% trans 'My blog' %}</h2>
       <p>
-        {% trans 'This is my blog' %} {% trans "I've written" %} {% total_posts %} {% trans 'posts so far' %}
+        <span>{% trans 'This is my blog' %}.</span>
+        {% trans "I've written" %} {% total_posts %} {% trans 'posts so far' %}
       </p>
       <p>
         <a href="{% url 'blog:post_feed' %}" class="link">{% trans 'Subscribe to my RSS feed' %}</a>

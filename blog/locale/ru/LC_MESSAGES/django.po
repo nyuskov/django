@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-22 15:56+0000\n"
+"POT-Creation-Date: 2025-10-24 11:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,13 +24,13 @@ msgstr ""
 msgid "Blog"
 msgstr "Блог"
 
-#: blog/feeds.py:11 blog/templates/blog/base.html:23
+#: blog/feeds.py:11 blog/templates/blog/base.html:16
 msgid "My blog"
 msgstr "Мой блог"
 
 #: blog/feeds.py:13
 msgid "New posts of my blog"
-msgstr ""
+msgstr "Новые посты на моём блоге"
 
 #: blog/forms.py:8 blog/models.py:95
 msgid "Name"
@@ -48,11 +48,15 @@ msgstr "К"
 msgid "Comment"
 msgstr "Комментарий"
 
+#: blog/forms.py:23
+msgid "Query"
+msgstr "Запрос"
+
 #: blog/models.py:21 blog/models.py:92
 msgid "Post"
 msgstr "Пост"
 
-#: blog/models.py:22 blog/templates/blog/base.html:20
+#: blog/models.py:22 blog/templates/blog/base.html:13
 msgid "Posts"
 msgstr "Посты"
 
@@ -110,32 +114,32 @@ msgstr "Почта"
 msgid "Comment by {name} on {post}"
 msgstr "Комментарий от {name} к {post}"
 
-#: blog/templates/blog/base.html:21 blog/templates/blog/post/search.html:5
+#: blog/templates/blog/base.html:14 blog/templates/blog/post/search.html:5
 #: blog/templates/blog/post/search.html:26
 msgid "Search"
-msgstr ""
+msgstr "Поиск"
 
-#: blog/templates/blog/base.html:25
+#: blog/templates/blog/base.html:18
 msgid "This is my blog"
 msgstr "Это мой блог"
 
-#: blog/templates/blog/base.html:25
+#: blog/templates/blog/base.html:18
 msgid "I've written"
 msgstr "Я написал"
 
-#: blog/templates/blog/base.html:25
+#: blog/templates/blog/base.html:18
 msgid "posts so far"
 msgstr "постов на данный момент"
 
-#: blog/templates/blog/base.html:28
+#: blog/templates/blog/base.html:21
 msgid "Subscribe to my RSS feed"
-msgstr ""
+msgstr "Подписаться на мою RSS-рассылку"
 
-#: blog/templates/blog/base.html:30
+#: blog/templates/blog/base.html:23
 msgid "Latest posts"
 msgstr "Последние посты"
 
-#: blog/templates/blog/base.html:32
+#: blog/templates/blog/base.html:25
 msgid "Most commented posts"
 msgstr "Самые комментируемые посты"
 
@@ -200,32 +204,27 @@ msgstr "Теги"
 
 #: blog/templates/blog/post/search.html:9
 msgid "Posts containing"
-msgstr ""
+msgstr "Посты содержащие"
 
 #: blog/templates/blog/post/search.html:10
 #, python-format
 msgid "Found %(total_results)s result"
 msgid_plural "Found %(total_results)s results"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Найден %(total_results)s результат"
+msgstr[1] "Найдено %(total_results)s результата"
+msgstr[2] "Найдены %(total_results)s результатов"
 
 #: blog/templates/blog/post/search.html:16
-#, fuzzy
-#| msgid "There are no similar posts yet."
 msgid "There are no results for your query"
-msgstr "Нет похожих постов"
+msgstr "Нет результатов для вашего запроса"
 
 #: blog/templates/blog/post/search.html:20
 msgid "Search again"
-msgstr ""
+msgstr "Искать снова"
 
 #: blog/templates/blog/post/search.html:23
-#, fuzzy
-#| msgid "Share a post"
 msgid "Search for posts"
-msgstr "Поделиться постом"
+msgstr "Поиск постов"
 
 #: blog/templates/blog/post/share.html:4
 msgid "Share a post"
@@ -250,19 +249,3 @@ msgstr "почтой"
 #: blog/templates/blog/post/share.html:17
 msgid "Send e-mail"
 msgstr "Отправить почтой"
-
-#: blog/templates/pagination.html:5
-msgid "Previous"
-msgstr "Предыдущая"
-
-#: blog/templates/pagination.html:7
-msgid "Page"
-msgstr "Страница"
-
-#: blog/templates/pagination.html:7
-msgid "of"
-msgstr "из"
-
-#: blog/templates/pagination.html:9
-msgid "Next"
-msgstr "Следующая"
