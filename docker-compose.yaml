@@ -1,0 +1,49 @@
+# docker-compose.yml
+services:
+  web:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 8000:8000
+    env_file:
+      - ./.env
+    volumes:
+      - socket_volume:/tmp/
+      - static_volume:/var/www
+    depends_on:
+      - db
+    networks:
+      - server_network
+  db:
+    image: postgres:latest
+    volumes:
+        - postgres_data:/var/lib/postgresql/data/
+    environment:
+        - POSTGRES_URL=postgres
+        - POSTGRES_PASSWORD=Xx123456
+        - POSTGRES_DB=django_project
+    networks:
+      - server_network
+  nginx:
+    image: nginx:latest
+    build:
+      context: .
+      dockerfile: ./nginx/Dockerfile
+    ports:
+      - 443:443
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - socket_volume:/tmp/
+      - static_volume:/var/www
+    depends_on:
+      - web
+    networks:
+      - server_network
+networks:
+  server_network:
+    driver: bridge
+volumes:
+  postgres_data:
+  socket_volume:
+  static_volume:
