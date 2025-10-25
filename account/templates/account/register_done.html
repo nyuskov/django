@@ -6,6 +6,6 @@
 {% block account_content %}
   <h1>{% trans 'Welcome' %}, {{ new_user.first_name }}!</h1>
   <p>
-    {% trans 'Your account has been successfully created. Now you can' %} <a href="{% url 'account:login' %}">{% trans 'log-in' %}</a>.
+    {% trans 'Your account has been successfully created. Now you can' %} <a href="{% url 'account:login' %}" class="link">{% trans 'log-in' %}</a>.
   </p>
 {% endblock %}

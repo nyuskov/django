@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-24 11:47+0000\n"
+"POT-Creation-Date: 2025-10-25 11:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -123,23 +123,23 @@ msgstr "Поиск"
 msgid "This is my blog"
 msgstr "Это мой блог"
 
-#: blog/templates/blog/base.html:18
+#: blog/templates/blog/base.html:19
 msgid "I've written"
 msgstr "Я написал"
 
-#: blog/templates/blog/base.html:18
+#: blog/templates/blog/base.html:19
 msgid "posts so far"
 msgstr "постов на данный момент"
 
-#: blog/templates/blog/base.html:21
+#: blog/templates/blog/base.html:22
 msgid "Subscribe to my RSS feed"
 msgstr "Подписаться на мою RSS-рассылку"
 
-#: blog/templates/blog/base.html:23
+#: blog/templates/blog/base.html:24
 msgid "Latest posts"
 msgstr "Последние посты"
 
-#: blog/templates/blog/base.html:25
+#: blog/templates/blog/base.html:26
 msgid "Most commented posts"
 msgstr "Самые комментируемые посты"
 

@@ -10,7 +10,7 @@
       {% trans 'Please, use the following form to log-in' %}:
     </p>
     <p>
-      {% trans "If you don't have an account" %} <a href="{% url 'account:register' %}">{% trans 'register here' %}</a>.
+      {% trans "If you don't have an account" %} <a href="{% url 'account:register' %}" class="link">{% trans 'register here' %}</a>.
     </p>
   {% endif %}
   <div class="login-form">
@@ -23,13 +23,13 @@
       </p>
     </form>
     <p>
-      <a href="{% url 'account:password_reset' %}">{% trans 'Forgotten your password' %}?</a>
+      <a href="{% url 'account:password_reset' %}" class="link">{% trans 'Forgotten your password' %}?</a>
     </p>
   </div>
   <div class="social">
     <ul>
       <li class="google">
-        <a href="{% url 'social:begin' 'google-oauth2' %}">{% trans 'Sign in with Google' %}</a>
+        <a href="{% url 'social:begin' 'google-oauth2' %}" class="link">{% trans 'Sign in with Google' %}</a>
       </li>
     </ul>
   </div>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-24 11:39+0000\n"
+"POT-Creation-Date: 2025-10-25 11:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: account/forms.py:18 account/forms.py:47
 msgid "Email already in use."
-msgstr ""
+msgstr "Почта уже используется."
 
 #: account/forms.py:33
 msgid "Password"
@@ -56,7 +56,11 @@ msgstr "Дата рождения"
 msgid "Photo"
 msgstr "Фото"
 
-#: account/models.py:22
+#: account/models.py:23
+msgid "CSS styles"
+msgstr "CSS стили"
+
+#: account/models.py:27
 msgid "Profile of"
 msgstr "Профиль пользователя"
 
@@ -160,6 +164,10 @@ msgstr "зарегистрироваться здесь"
 msgid "Forgotten your password"
 msgstr "Забыли свой пароль"
 
+#: account/templates/registration/login.html:32
+msgid "Sign in with Google"
+msgstr "Войти с помощью Google"
+
 #: account/templates/registration/password_change_done.html:4
 #: account/templates/registration/password_change_done.html:7
 msgid "Password changed"
@@ -254,9 +262,8 @@ msgstr "Отправить на почту"
 
 #: account/views.py:48
 msgid "Profile updated successfully"
-msgstr ""
+msgstr "Профиль успешно обновлён"
 
 #: account/views.py:50
 msgid "Error updating your profile"
 msgstr "Ошибка при обновлении вашего профиля"
-

@@ -9,8 +9,8 @@
 
       {% endblock %}
     </title>
-    <link href="{% static 'css/app.css' %}" rel="stylesheet" />
     <link rel="stylesheet" href="{% static 'css/w3.css' %}" />
+    <link href="{% static 'css/app.css' %}" rel="stylesheet" />
     {% if request.user.profile.styles %}
       <link rel="stylesheet" href="{% media request.user.profile.styles %}" />
     {% endif %}
@@ -40,7 +40,8 @@
       {% endif %}
       <span class="user">
         {% if request.user.is_authenticated %}
-          {% trans 'Hello' %}, {{ request.user.first_name|default:request.user.username }}!<form action="{% url 'account:logout' %}" method="post">
+          <span>{% trans 'Hello' %}, {{ request.user.first_name|default:request.user.username }}!</span>
+          <form action="{% url 'account:logout' %}" method="post">
             <button type="submit">{% trans 'Logout' %}</button>
             {% csrf_token %}
           </form>
