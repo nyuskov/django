@@ -27,11 +27,6 @@ p.date {
     margin-right: 10px;
 }
 
-.link {
-    color: #12c064;
-    text-decoration: none;
-}
-
 /* pagination */
 .pagination {
     margin: 40px 0;
@@ -58,16 +53,6 @@ textarea {
     resize: none;
 }
 
-input[type=submit] {
-    font-weight: bold;
-    background: #00abff;
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 14px;
-    text-transform: uppercase;
-    cursor: pointer;
-}
-
 .errorlist {
     color: #cc0033;
     float: left;
@@ -87,11 +72,11 @@ input[type=submit] {
 .comment .info {
     font-weight: bold;
     font-size: 12px;
-    color: #666;
+    color: var(--additional-color)
 }
 
 .tags {
-    color: #666;
+    color: var(--additional-color);
 }
 
 .separator {
@@ -137,15 +122,4 @@ input[type=submit] {
 /* w3 */
 .overlay {
     cursor: pointer;
-}
-
-/* button */
-input[type=submit],
-a.button {
-    font-weight: bold;
-    background: #12c064;
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 14px;
-    text-transform: uppercase;
 }
