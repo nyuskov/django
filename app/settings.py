@@ -78,6 +78,7 @@ INSTALLED_APPS = [
     "taggit",
     "social_django",
     "blog.apps.BlogConfig",
+    "images.apps.ImagesConfig",
 ]
 
 SOCIAL_AUTH_PIPELINE = [
