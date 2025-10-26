@@ -21,23 +21,25 @@
   </head>
   <body>
     <div id="header">
-      <span class="logo">{% trans 'Bookmarks' %}</span>
-      {% if request.user.is_authenticated %}
-        <ul class="menu">
-          <li id="dashboard">
-            <a href="{% url 'account:dashboard' %}">{% trans 'My dashboard' %}</a>
-          </li>
-          <li id="images">
-            <a href="#">{% trans 'Images' %}</a>
-          </li>
-          <li id="people">
-            <a href="#">{% trans 'People' %}</a>
-          </li>
-          <li id="blog">
-            <a href="{% url 'blog:post_list' %}">{% trans 'Blog' %}</a>
-          </li>
-        </ul>
-      {% endif %}
+      <div class="bar">
+        <span class="logo">{% trans 'Bookmarks' %}</span>
+        {% if request.user.is_authenticated %}
+          <ul class="menu">
+            <li id="dashboard">
+              <a href="{% url 'account:dashboard' %}">{% trans 'My dashboard' %}</a>
+            </li>
+            <li id="images">
+              <a href="#">{% trans 'Images' %}</a>
+            </li>
+            <li id="people">
+              <a href="#">{% trans 'People' %}</a>
+            </li>
+            <li id="blog">
+              <a href="{% url 'blog:post_list' %}">{% trans 'Blog' %}</a>
+            </li>
+          </ul>
+        {% endif %}
+      </div>
       <span class="user">
         {% if request.user.is_authenticated %}
           <span>{% trans 'Hello' %}, {{ request.user.first_name|default:request.user.username }}!</span>

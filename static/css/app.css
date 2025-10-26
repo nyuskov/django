@@ -33,25 +33,27 @@
     color: var(--optional-color);
     border-bottom: 4px solid var(--secondary-color);
     overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #header .logo {
     font-family: 'Muli', sans-serif;
-    float: left;
     color: var(--optional-color);
     font-size: 20px;
-    margin-right: 10%;
+    margin-right: 100px;
 }
 
 #header ul.menu {
+    display: flex;
+    align-items: left;
     list-style: none;
-    float: left;
     margin: 0;
     padding: 0;
 }
 
 #header ul.menu li {
-    float: left;
     padding: 4px 10px;
 }
 
@@ -70,14 +72,12 @@
 }
 
 #header .user {
-    float: right;
-    padding-top: 4px;
     display: flex;
+    align-items: center;
 }
 
 #header .user form {
     display: inline;
-    float: right;
 }
 
 #header .user button {
@@ -85,8 +85,12 @@
     color: var(--secondary-color);
     border: none;
     cursor: pointer;
-    float: left;
     display: inline;
+}
+
+.bar {
+    display: flex;
+    align-items: center;
 }
 
 /* link */
