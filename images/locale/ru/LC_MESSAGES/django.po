@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-25 11:45+0000\n"
+"POT-Creation-Date: 2025-10-26 12:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,13 +19,18 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: images/apps.py:8 images/models.py:14
+msgid "Images"
+msgstr "Изображения"
+
+#: images/forms.py:26
+msgid "The given URL does not match valid image extensions."
+msgstr "Указанный URL не соответствует допустимым расширениям изображений."
+
 #: images/models.py:13 images/models.py:32
 msgid "Image"
 msgstr "Изображение"
-
-#: images/models.py:14
-msgid "Images"
-msgstr "Изображения"
 
 #: images/models.py:20
 msgid "User"
@@ -54,3 +59,16 @@ msgstr "Дата создания"
 #: images/models.py:45
 msgid "Users who liked it"
 msgstr "Пользователи, которым понравилось"
+
+#: images/templates/images/image/create.html:5
+#: images/templates/images/image/create.html:11
+msgid "Bookmark an image"
+msgstr "Добавить изображение в закладки"
+
+#: images/templates/images/image/create.html:16
+msgid "Bookmark it"
+msgstr "Добавить в закладки"
+
+#: images/views.py:22
+msgid "Image added successfully"
+msgstr "Изображение успешно добавлено"

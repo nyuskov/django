@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-25 11:12+0000\n"
+"POT-Creation-Date: 2025-10-26 12:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,10 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: account/apps.py:8
+msgid "Account"
+msgstr "Аккаунт"
 
 #: account/forms.py:18 account/forms.py:47
 msgid "Email already in use."
@@ -65,28 +69,47 @@ msgid "Profile of"
 msgstr "Профиль пользователя"
 
 #: account/templates/account/dashboard.html:4
-#: account/templates/account/dashboard.html:7
+#: account/templates/account/dashboard.html:10
 msgid "Dashboard"
 msgstr "Панель инструментов"
 
-#: account/templates/account/dashboard.html:9
+#: account/templates/account/dashboard.html:12
 msgid "Welcome to your dashboard"
 msgstr "Добро пожаловать на вашу панель инструментов"
 
-#: account/templates/account/dashboard.html:10
-#: account/templates/registration/logged_out.html:10
-msgid "You can"
-msgstr "Вы можете"
+#: account/templates/account/dashboard.html:12
+#, python-format
+msgid "You have bookmarked %(total_images_created)s image"
+msgid_plural "You have bookmarked %(total_images_created)s images"
+msgstr[0] "Вы добавили в закладки %(total_images_created)s изображение"
+msgstr[1] "Вы добавили в закладки %(total_images_created)s изображения"
+msgstr[2] "Вы добавили в закладки %(total_images_created)s изображений"
 
-#: account/templates/account/dashboard.html:10
+#: account/templates/account/dashboard.html:15
+msgid ""
+"Drag the following button to your bookmarks toolbar to bookmark images from "
+"other websites"
+msgstr ""
+"Перетащите следующую кнопку на панель закладок, чтобы добавить в закладки "
+"изображения с других веб-сайтов"
+
+#: account/templates/account/dashboard.html:15
+msgid "Bookmark it"
+msgstr "Добавить в закладки"
+
+#: account/templates/account/dashboard.html:18
+msgid "You can also"
+msgstr "Вы можете также"
+
+#: account/templates/account/dashboard.html:18
 msgid "edit your profile"
 msgstr "редактировать ваш профиль"
 
-#: account/templates/account/dashboard.html:11
+#: account/templates/account/dashboard.html:19
 msgid "or"
 msgstr "или"
 
-#: account/templates/account/dashboard.html:11
+#: account/templates/account/dashboard.html:19
 msgid "change your password"
 msgstr "изменить свой пароль"
 
@@ -136,6 +159,10 @@ msgstr "Вышел из системы"
 #: account/templates/registration/logged_out.html:9
 msgid "You have been successfully logged out."
 msgstr "Вы успешно вышли из системы."
+
+#: account/templates/registration/logged_out.html:10
+msgid "You can"
+msgstr "Вы можете"
 
 #: account/templates/registration/logged_out.html:10
 msgid "log-in again"

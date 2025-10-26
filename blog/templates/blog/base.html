@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="{% static 'css/blog.css' %}" />
   <script src="{% static 'js/blog.js' %}"></script>
 {% endblock %}
-{% block content %}
+{% block sidebar %}
   <!-- Sidebar -->
   <div class="w3-sidebar w3-bar-block sidebar" style="display:none; z-index:5" id="mySidebar">
     <button class="w3-bar-item w3-button w3-xxlarge" onclick="w3_close()"><i>&times;</i></button>
@@ -34,11 +34,12 @@
       </ul>
     </div>
   </div>
+  <button class="w3-xxlarge w3-button menu-button" onclick="w3_open()">&#9776;</button>
+{% endblock %}
+{% block content %}
   <!-- Page Content -->
   <main class="main" id="mainContent">
-    <div class="side-block">
-      <button class="w3-xxlarge w3-button" onclick="w3_open()">&#9776;</button>
-    </div>
+    <div class="side-block"></div>
     <div class="w3-overlay overlay" onclick="w3_close()" id="myOverlay"></div>
     <div id="blog_content" class="w3-container content">
       {% block blog_content %}

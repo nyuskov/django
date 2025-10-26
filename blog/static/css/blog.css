@@ -1,20 +1,3 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: helvetica, sans-serif;
-}
-
-h1 {
-    font-weight: normal;
-    border-bottom: 1px solid #bbb;
-    padding: 0 0 10px 0;
-}
-
-h2 {
-    font-weight: normal;
-    margin: 30px 0 0;
-}
-
 p.date {
     color: #868686;
     font-family: georgia, serif;
@@ -31,33 +14,6 @@ p.date {
 .pagination {
     margin: 40px 0;
     font-weight: bold;
-}
-
-/* forms */
-label {
-    float: left;
-    clear: both;
-    color: #333;
-    margin-bottom: 4px;
-}
-
-input,
-textarea {
-    clear: both;
-    float: left;
-    margin: 0 0 10px;
-    background: #ededed;
-    border: 0;
-    padding: 6px 10px;
-    font-size: 12px;
-    resize: none;
-}
-
-.errorlist {
-    color: #cc0033;
-    float: left;
-    clear: both;
-    padding-left: 10px;
 }
 
 /* comments */
@@ -93,6 +49,8 @@ textarea {
     width: 75%;
 }
 
+
+/* sidebar */
 #mySidebar::-webkit-scrollbar {
     width: 7px;
     background-color: #aeaeae;
@@ -118,6 +76,11 @@ textarea {
 .sidebar-content {
     box-shadow: inset 1px 0px 20px rgba(0, 0, 0, 0.1);
 }
+
+.menu-button {
+    position: absolute;
+}
+
 
 /* w3 */
 .overlay {

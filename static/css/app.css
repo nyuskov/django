@@ -25,6 +25,92 @@
 }
 
 
+/* general styles */
+@import url(//fonts.googleapis.com/css?family=Muli);
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: helvetica, sans-serif;
+}
+
+p {
+    line-height: 1.8;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Muli', sans-serif;
+    font-weight: normal;
+}
+
+h1 {
+    border-bottom: 1px solid #bbb;
+    padding: 0 0 10px 0;
+    margin: 10px 0 20px 0;
+}
+
+h2 {
+    margin: 30px 0 20px;
+}
+
+ol {
+    line-height: 1.5;
+}
+
+#content {
+    padding: 30px 100px;
+}
+
+/* forms */
+form {
+    overflow: auto;
+}
+
+form p {
+    width: 100%;
+    overflow: auto;
+}
+
+label {
+    float: left;
+    clear: both;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+input,
+textarea {
+    clear: both;
+    float: left;
+    margin: 0 0 10px;
+    background: #efefef;
+    border: 0;
+    padding: 6px 10px;
+    font-size: 14px;
+    resize: none;
+}
+
+.errorlist {
+    color: #cc0033;
+    float: left;
+    clear: both;
+    padding-left: 10px;
+}
+
+.helptext {
+    margin: 0 0 20px 0;
+    color: #aaa;
+    clear: both;
+    float: left;
+    font-size: 13px;
+}
+
+
 /* header */
 #header {
     padding: 10px 100px;

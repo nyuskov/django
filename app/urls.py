@@ -22,6 +22,7 @@ from debug_toolbar.toolbar import debug_toolbar_urls  # type: ignore
 from django.urls import path, include
 from django.utils.translation import gettext as _
 from django.views.generic import RedirectView
+from django.views.i18n import JavaScriptCatalog
 
 from blog.sitemaps import PostSitemap
 
@@ -39,6 +40,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("blog/", include("blog.urls", namespace="blog")),
     path("account/", include("account.urls", namespace="account")),
+    path("images/", include("images.urls", namespace="images")),
     path(
         "sitemap.xml",
         sitemap,
@@ -51,6 +53,7 @@ urlpatterns = [
         RedirectView.as_view(url=f"{settings.STATIC_URL}images/favicon.ico"),
         name="favicon",
     ),
+    path("jsi18n/", JavaScriptCatalog.as_view(), name="javascript_catalog"),
 ]
 
 if settings.DEBUG:

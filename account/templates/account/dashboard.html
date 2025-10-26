@@ -3,12 +3,19 @@
 {% block title %}
   {% trans 'Dashboard' %}
 {% endblock %}
+{% block source %}
+  <script type="text/javascript" src="{% url 'javascript_catalog' %}"></script>
+{% endblock %}
 {% block account_content %}
   <h1>{% trans 'Dashboard' %}</h1>
   <p>
-    {% trans 'Welcome to your dashboard' %}. <span>
-      {% translate 'You can' %} <a href="{% url 'account:edit' %}" class="link">{% translate 'edit your profile' %}</a>
-      {% translate 'or' %} <a href="{% url 'account:password_change' %}" class="link">{% translate 'change your password' %}</a>.
-    </span>
+    {% trans 'Welcome to your dashboard' %}. <span>{% blocktrans count request.user.images_created.count as total_images_created %}You have bookmarked {{ total_images_created }} image{% plural %}You have bookmarked {{ total_images_created }} images{% endblocktrans %}.</span>
+  </p>
+  <p>
+    {% trans 'Drag the following button to your bookmarks toolbar to bookmark images from other websites' %}→ <a href="javascript:{% include 'images/bookmarklet_launcher.js' %}" class="button">{% trans 'Bookmark it' %}</a>
+  </p>
+  <p>
+    {% translate 'You can also' %} <a href="{% url 'account:edit' %}" class="link">{% translate 'edit your profile' %}</a>
+    {% translate 'or' %} <a href="{% url 'account:password_change' %}" class="link">{% translate 'change your password' %}</a>.
   </p>
 {% endblock %}
