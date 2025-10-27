@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import ImageCreateView, ImageDetailView, image_like, image_list
+from .views import ImageCreateView, ImageDetailView, ImageListView, image_like
 
 app_name = "images"
 urlpatterns = [
@@ -9,5 +9,5 @@ urlpatterns = [
         "detail/<int:id>/<slug:slug>/", ImageDetailView.as_view(), name="detail"
     ),
     path("like/", image_like, name="like"),
-    path("", image_list, name="list"),
+    path("", ImageListView.as_view(), name="list"),
 ]
