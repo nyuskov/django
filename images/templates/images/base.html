@@ -2,5 +2,10 @@
 {% load static %}
 {% block source %}
   <link href="{% static 'css/images.css' %}" rel="stylesheet" />
+  <script>
+    let url = '{% url "images:like" %}'
+    let csrftoken = '{{ csrf_token }}'
+  </script>
+  <script src="{% url 'javascript_catalog' %}"></script>
   <script src="{% static 'js/images.js' %}"></script>
 {% endblock %}

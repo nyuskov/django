@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-27 07:11+0000\n"
+"POT-Creation-Date: 2025-10-27 08:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -73,28 +73,35 @@ msgstr "Добавить изображение в закладки"
 msgid "Bookmark it"
 msgstr "Добавить в закладки"
 
-#: images/templates/images/image/detail.html:12
-#, python-format
+#: images/templates/images/image/detail.html:13
 msgid ""
 "\n"
-"        %(total_likes)s like"
+"        <span class=\"total\">%(total_likes)s</span> like"
 msgid_plural ""
 "\n"
-"        %(total_likes)s likes"
+"        <span class=\"total\">%(total_likes)s</span> likes"
 msgstr[0] ""
 "\n"
-"        %(total_likes)s лайк"
+"        <span class=\"total\">%(total_likes)s</span> лайк"
 msgstr[1] ""
 "\n"
-"        %(total_likes)s лайка"
+"        <span class=\"total\">%(total_likes)s</span> лайка"
 msgstr[2] ""
 "\n"
-"        %(total_likes)s лайков"
+"        <span class=\"total\">%(total_likes)s</span> лайков"
 
-#: images/templates/images/image/detail.html:28
+#: images/templates/images/image/detail.html:20
+msgid "Like"
+msgstr "Нравится"
+
+#: images/templates/images/image/detail.html:22
+msgid "Unlike"
+msgstr "Не нравится"
+
+#: images/templates/images/image/detail.html:38
 msgid "Nobody likes this image yet"
 msgstr "Никому пока не понравилось это изображение"
 
-#: images/views.py:26
+#: images/views.py:29
 msgid "Image added successfully"
 msgstr "Изображение успешно добавлено"
