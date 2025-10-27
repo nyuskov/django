@@ -14,6 +14,6 @@ fi
 poetry run python manage.py flush --no-input
 poetry run python manage.py migrate
 poetry run python manage.py collectstatic
-
+poetry run python manage.py createsuperuser --noinput
 
 exec "$@"
