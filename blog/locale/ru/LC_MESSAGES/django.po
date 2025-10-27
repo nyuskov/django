@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-25 11:12+0000\n"
+"POT-Creation-Date: 2025-10-27 13:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -82,15 +82,15 @@ msgid "Body"
 msgstr "Тело"
 
 #: blog/models.py:41
-msgid "Published date"
+msgid "Publish date"
 msgstr "Дата публикации"
 
-#: blog/models.py:45 blog/models.py:100
-msgid "Created date"
+#: blog/models.py:45
+msgid "Creation date"
 msgstr "Дата создания"
 
-#: blog/models.py:49 blog/models.py:103
-msgid "Updated date"
+#: blog/models.py:49
+msgid "Update date"
 msgstr "Дата обновления"
 
 #: blog/models.py:55 blog/models.py:106
@@ -108,6 +108,14 @@ msgstr "Комментарии"
 #: blog/models.py:97
 msgid "E-mail"
 msgstr "Почта"
+
+#: blog/models.py:100
+msgid "Created date"
+msgstr "Дата создания"
+
+#: blog/models.py:103
+msgid "Updated date"
+msgstr "Дата обновления"
 
 #: blog/models.py:110
 #, python-brace-format

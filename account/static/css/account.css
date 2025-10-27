@@ -36,7 +36,6 @@
 #people-list .user {
     width: 180px;
     float: left;
-    overflow: auto;
     padding: 10px;
 }
 

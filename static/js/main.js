@@ -6,7 +6,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (window.location.pathname.search("blog") != -1) {
       this.querySelector("#blog").classList.add("selected");
     } else if (window.location.pathname.search("account") != -1) {
-      this.querySelector("#dashboard").classList.add("selected");
+      if (window.location.pathname.search("users") != -1) {
+        this.querySelector("#people").classList.add("selected");
+      } else {
+        this.querySelector("#dashboard").classList.add("selected");
+      }
     } else if (window.location.pathname.search("images") != -1) {
       this.querySelector("#images").classList.add("selected");
     }

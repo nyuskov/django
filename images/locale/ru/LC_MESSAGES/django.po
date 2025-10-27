@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-27 08:55+0000\n"
+"POT-Creation-Date: 2025-10-27 13:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,6 +74,7 @@ msgid "Bookmark it"
 msgstr "Добавить в закладки"
 
 #: images/templates/images/image/detail.html:13
+#, python-format
 msgid ""
 "\n"
 "        <span class=\"total\">%(total_likes)s</span> like"
@@ -102,6 +103,11 @@ msgstr "Не нравится"
 msgid "Nobody likes this image yet"
 msgstr "Никому пока не понравилось это изображение"
 
-#: images/views.py:29
+#: images/templates/images/image/list.html:4
+#: images/templates/images/image/list.html:7
+msgid "Images bookmarked"
+msgstr "Изображения, добавленные в закладки"
+
+#: images/views.py:30
 msgid "Image added successfully"
 msgstr "Изображение успешно добавлено"

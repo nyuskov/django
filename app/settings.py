@@ -13,6 +13,14 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 import os
 from pathlib import Path
 from decouple import config  # type: ignore
+from django.urls import reverse_lazy
+
+# Details URI
+ABSOLUTE_URL_OVERRIDES = {
+    "auth.user": lambda u: reverse_lazy(
+        "account:user_detail", args=[u.username]
+    )
+}
 
 # OAuth2
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = config("GOOGLE_OAUTH2_KEY")

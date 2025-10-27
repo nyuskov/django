@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-26 12:52+0000\n"
+"POT-Creation-Date: 2025-10-27 14:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,33 +40,57 @@ msgstr "Повторите пароль"
 msgid "Passwords don't match."
 msgstr "Пароли не совпадают."
 
-#: account/models.py:8
+#: account/models.py:9
 msgid "Profile"
 msgstr "Профиль"
 
-#: account/models.py:9
+#: account/models.py:10
 msgid "Profiles"
 msgstr "Профили"
 
-#: account/models.py:13
+#: account/models.py:14
 msgid "User"
 msgstr "Пользователь"
 
-#: account/models.py:16
+#: account/models.py:17
 msgid "Date of birth"
 msgstr "Дата рождения"
 
-#: account/models.py:18
+#: account/models.py:19
 msgid "Photo"
 msgstr "Фото"
 
-#: account/models.py:23
+#: account/models.py:24
 msgid "CSS styles"
 msgstr "CSS стили"
 
-#: account/models.py:27
+#: account/models.py:28
 msgid "Profile of"
 msgstr "Профиль пользователя"
+
+#: account/models.py:37
+msgid "Contact"
+msgstr "Контакт"
+
+#: account/models.py:38
+msgid "Contacts"
+msgstr "Контакты"
+
+#: account/models.py:44
+msgid "Follower"
+msgstr "Последователь"
+
+#: account/models.py:50
+msgid "Following"
+msgstr "Следующий"
+
+#: account/models.py:53
+msgid "Creation date"
+msgstr "Дата создания"
+
+#: account/models.py:56
+msgid "follows"
+msgstr "следует за"
 
 #: account/templates/account/dashboard.html:4
 #: account/templates/account/dashboard.html:10
@@ -150,6 +174,42 @@ msgstr "Ваш аккаунт успешно создан. Вы можете"
 #: account/templates/account/register_done.html:9
 msgid "log-in"
 msgstr "войти"
+
+#: account/templates/account/user/detail.html:13
+#, python-format
+msgid ""
+"\n"
+"    <span class=\"total\">%(total_followers)s</span>\n"
+"    follower"
+msgid_plural ""
+"\n"
+"    <span class=\"total\">%(total_followers)s</span>\n"
+"    followers"
+msgstr[0] ""
+"\n"
+"    <span class=\"total\">%(total_followers)s</span>\n"
+"    фолловер"
+msgstr[1] ""
+"\n"
+"    <span class=\"total\">%(total_followers)s</span>\n"
+"    фолловера"
+msgstr[2] ""
+"\n"
+"    <span class=\"total\">%(total_followers)s</span>\n"
+"    фолловеров"
+
+#: account/templates/account/user/detail.html:21
+msgid "Follow"
+msgstr "Подписаться"
+
+#: account/templates/account/user/detail.html:23
+msgid "Unfollow"
+msgstr "Отписаться"
+
+#: account/templates/account/user/list.html:5
+#: account/templates/account/user/list.html:8
+msgid "People"
+msgstr "Люди"
 
 #: account/templates/registration/logged_out.html:4
 #: account/templates/registration/logged_out.html:7
@@ -287,10 +347,10 @@ msgstr "Введите ваш адрес электронной почты дл�
 msgid "Send e-mail"
 msgstr "Отправить на почту"
 
-#: account/views.py:48
+#: account/views.py:66
 msgid "Profile updated successfully"
 msgstr "Профиль успешно обновлён"
 
-#: account/views.py:50
+#: account/views.py:68
 msgid "Error updating your profile"
 msgstr "Ошибка при обновлении вашего профиля"

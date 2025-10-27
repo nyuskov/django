@@ -67,15 +67,6 @@ ol {
 }
 
 /* forms */
-form {
-    overflow: auto;
-}
-
-form p {
-    width: 100%;
-    overflow: auto;
-}
-
 label {
     float: left;
     clear: both;
@@ -118,7 +109,6 @@ textarea {
     background: var(--primary-color);
     color: var(--optional-color);
     border-bottom: 4px solid var(--secondary-color);
-    overflow: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;

@@ -38,15 +38,15 @@ class Post(models.Model):
     body: models.TextField = models.TextField(verbose_name=_("Body"))
     publish: models.DateTimeField = models.DateTimeField(
         default=timezone.now,
-        verbose_name=_("Published date"),
+        verbose_name=_("Publish date"),
     )
     created: models.DateTimeField = models.DateTimeField(
         auto_now_add=True,
-        verbose_name=_("Created date"),
+        verbose_name=_("Creation date"),
     )
     updated: models.DateTimeField = models.DateTimeField(
         auto_now=True,
-        verbose_name=_("Updated date"),
+        verbose_name=_("Update date"),
     )
     status: models.CharField = models.CharField(
         max_length=2,

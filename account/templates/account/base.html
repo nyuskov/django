@@ -3,6 +3,13 @@
 {% load i18n %}
 {% block source %}
   <link href="{% static 'css/account.css' %}" rel="stylesheet" />
+  <link href="{% static 'css/images.css' %}" rel="stylesheet" />
+  <script>
+    let url = '{% url "account:user_follow" %}'
+    let csrftoken = '{{ csrf_token }}'
+  </script>
+  <script src="{% url 'javascript_catalog' %}"></script>
+  <script src="{% static 'js/account.js' %}"></script>
   {% comment %} <link href="{% static 'css/w3.css' %}" rel="stylesheet" /> {% endcomment %}
 {% endblock %}
 {% block content %}
