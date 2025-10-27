@@ -1,6 +1,6 @@
 #bookmarklet {
     background: #fff;
-    border-bottom: 8px solid #12c064;
+    border-bottom: 8px solid var(--primary-color);
     font-family: "Helvetica Neue", helvetica, arial, sans-serif !important;
     padding: 10px;
     overflow: auto;
@@ -50,6 +50,6 @@
 
 #bookmarklet .images img.selected,
 #bookmarklet .images img:hover {
-    border: 1px solid #12c064;
+    border: 1px solid var(--primary-color);
     opacity: 1;
 }

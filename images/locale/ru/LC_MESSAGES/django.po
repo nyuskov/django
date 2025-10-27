@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-26 12:36+0000\n"
+"POT-Creation-Date: 2025-10-27 07:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: images/apps.py:8 images/models.py:14
+#: images/apps.py:8 images/models.py:15
 msgid "Images"
 msgstr "Изображения"
 
@@ -28,47 +28,73 @@ msgstr "Изображения"
 msgid "The given URL does not match valid image extensions."
 msgstr "Указанный URL не соответствует допустимым расширениям изображений."
 
-#: images/models.py:13 images/models.py:32
+#: images/forms.py:48
+msgid "Couldn't download the given URL."
+msgstr "Не могу загрузить указанный URL."
+
+#: images/models.py:14 images/models.py:33
 msgid "Image"
 msgstr "Изображение"
 
-#: images/models.py:20
+#: images/models.py:21
 msgid "User"
 msgstr "Пользователь"
 
-#: images/models.py:23
+#: images/models.py:24
 msgid "Title"
 msgstr "Название"
 
-#: images/models.py:26
+#: images/models.py:27
 msgid "Slug"
 msgstr "Слаг"
 
-#: images/models.py:29
+#: images/models.py:30
 msgid "URL"
 msgstr ""
 
-#: images/models.py:35
+#: images/models.py:36
 msgid "Description"
 msgstr "Описание"
 
-#: images/models.py:38
+#: images/models.py:39
 msgid "Creation date"
 msgstr "Дата создания"
 
-#: images/models.py:45
+#: images/models.py:46
 msgid "Users who liked it"
 msgstr "Пользователи, которым понравилось"
 
 #: images/templates/images/image/create.html:5
-#: images/templates/images/image/create.html:11
+#: images/templates/images/image/create.html:8
 msgid "Bookmark an image"
 msgstr "Добавить изображение в закладки"
 
-#: images/templates/images/image/create.html:16
+#: images/templates/images/image/create.html:13
 msgid "Bookmark it"
 msgstr "Добавить в закладки"
 
-#: images/views.py:22
+#: images/templates/images/image/detail.html:12
+#, python-format
+msgid ""
+"\n"
+"        %(total_likes)s like"
+msgid_plural ""
+"\n"
+"        %(total_likes)s likes"
+msgstr[0] ""
+"\n"
+"        %(total_likes)s лайк"
+msgstr[1] ""
+"\n"
+"        %(total_likes)s лайка"
+msgstr[2] ""
+"\n"
+"        %(total_likes)s лайков"
+
+#: images/templates/images/image/detail.html:28
+msgid "Nobody likes this image yet"
+msgstr "Никому пока не понравилось это изображение"
+
+#: images/views.py:26
 msgid "Image added successfully"
 msgstr "Изображение успешно добавлено"

@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.postgres.search import (
     # SearchVector,
     # SearchQuery,
@@ -14,7 +15,7 @@ from .forms import EmailPostForm, CommentForm, SearchForm
 from .models import Post
 
 
-class PostSearchView(FormView):
+class PostSearchView(LoginRequiredMixin, FormView):
     form_class = SearchForm
     template_name = "blog/post/search.html"
 
@@ -43,7 +44,7 @@ class PostSearchView(FormView):
         )
 
 
-class PostListView(ListView):
+class PostListView(LoginRequiredMixin, ListView):
     queryset = Post.published.none()
     context_object_name = "posts"
     paginate_by = 3
@@ -62,7 +63,7 @@ class PostListView(ListView):
         )
 
 
-class PostCommentView(FormView):
+class PostCommentView(LoginRequiredMixin, FormView):
     form_class = CommentForm
     template_name = "blog/post/comment.html"
 
@@ -85,7 +86,7 @@ class PostCommentView(FormView):
         )
 
 
-class PostShareView(FormView):
+class PostShareView(LoginRequiredMixin, FormView):
     form_class = EmailPostForm
     template_name = "blog/post/share.html"
 
@@ -129,7 +130,7 @@ class PostShareView(FormView):
         )
 
 
-class PostDetailView(FormView):
+class PostDetailView(LoginRequiredMixin, FormView):
     form_class = CommentForm
     template_name = "blog/post/detail.html"
 

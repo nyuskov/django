@@ -83,6 +83,7 @@ INSTALLED_APPS = [
     "django_extensions",
     "taggit",
     "social_django",
+    "easy_thumbnails",
     "blog.apps.BlogConfig",
     "images.apps.ImagesConfig",
 ]

@@ -1,7 +1,7 @@
-import requests
+import requests  # type: ignore
 from django import forms
 from django.core.files.base import ContentFile
-from django.utils.text import slugify
+from slugify import slugify
 from django.utils.translation import gettext as _
 
 from .models import Image
@@ -36,9 +36,15 @@ class ImageCreateForm(forms.ModelForm):
         image_name = f"{name}.{extension}"
 
         # download image from the given URL
-        response = requests.get(image_url)
-        image.image.save(image_name, ContentFile(response.content), save=False)
-        if commit:
-            image.save()
+        try:
+            response = requests.get(image_url)
+            response.raise_for_status()
+            image.image.save(
+                image_name, ContentFile(response.content), save=False
+            )
+            if commit:
+                image.save()
+        except (requests.exceptions.HTTPError, requests.exceptions.SSLError):
+            raise forms.ValidationError(_("Couldn't download the given URL."))
 
         return image
