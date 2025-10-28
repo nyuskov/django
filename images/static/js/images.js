@@ -42,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let blockRequest = false;
     window.addEventListener("scroll", function (e) {
       let margin = document.body.clientHeight - window.innerHeight - 200;
-      console.log(window.pageYOffset, margin);
       if (window.pageYOffset > margin && !emptyPage && !blockRequest) {
         blockRequest = true;
         page += 1;

@@ -6,13 +6,18 @@
 {% endblock %}
 {% block content %}
   <h1>{{ image.title }}</h1>
-  <a href="{{ image.image.url }}"><img src="{% thumbnail image.image 300x0 %}" class="image-detail" /></a>
+  <a href="{{ image.image.url }}"><img src="{% thumbnail image.image '300x0' %}" class="image-detail" /></a>
   <div class="image-info">
     <div>
       <span class="count">
         {% blocktrans count image.users_like.count as total_likes %}
         <span class="total">{{ total_likes }}</span> like{% plural %}
         <span class="total">{{ total_likes }}</span> likes{% endblocktrans %}
+      </span>
+      <span class="count">
+        {% blocktrans count total_views as total_views %}
+        {{ total_views }} view{% plural %}
+        {{ total_views }} views{% endblocktrans %}
       </span>
       {% with users_like=image.users_like.all %}
         <a href="#" data-id="{{ image.id }}" data-action="{% if request.user in users_like %}un{% endif %}like" class="like button">

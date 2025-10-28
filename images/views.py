@@ -1,3 +1,5 @@
+import redis
+from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -13,6 +15,47 @@ from django.views.generic.edit import FormView
 from .forms import ImageCreateForm
 from .models import Image
 from actions.utils import create_action
+
+# connect to redis
+r = redis.Redis(
+    host=settings.REDIS_HOST, port=settings.REDIS_PORT, db=settings.REDIS_DB
+)
+
+
+@login_required
+@require_POST
+def image_like(request):
+    image_id = request.POST.get("id")
+    action = request.POST.get("action")
+    if image_id and action:
+        try:
+            image = Image.objects.get(id=image_id)
+            if action == "like":
+                image.users_like.add(request.user)
+                # add action
+                create_action(request.user, _("likes"), image)
+            else:
+                image.users_like.remove(request.user)
+            return JsonResponse({"status": "ok"})
+        except Image.DoesNotExist:
+            pass
+    return JsonResponse({"status": "error"})
+
+
+class ImageRankingView(LoginRequiredMixin, TemplateView):
+    template_name = "images/image/ranking.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        image_ranking = r.zrange("image_ranking", 0, -1, desc=True)[:10]
+        image_ranking_ids = [int(id) for id in image_ranking]
+        # get most viewed images
+        most_viewed = list(Image.objects.filter(id__in=image_ranking_ids))
+        most_viewed.sort(key=lambda x: image_ranking_ids.index(x.id))
+
+        context["most_viewed"] = most_viewed
+        return context
 
 
 class ImageCreateView(LoginRequiredMixin, FormView):
@@ -55,32 +98,18 @@ class ImageDetailView(LoginRequiredMixin, TemplateView):
         image_id = kwargs.get("id")
         image_slug = kwargs.get("slug")
         image = get_object_or_404(Image, id=image_id, slug=image_slug)
-        context = {"image": image}
+        # increment total image views by 1
+        total_views = r.incr(f"image:{image.id}:views")
+        # increment image ranking by 1
+        r.zincrby("image_ranking", 1, image.id)
+
+        context = {"image": image, "total_views": total_views}
+
         return render(
             self.request,
             self.template_name,
             context,
         )
-
-
-@login_required
-@require_POST
-def image_like(request):
-    image_id = request.POST.get("id")
-    action = request.POST.get("action")
-    if image_id and action:
-        try:
-            image = Image.objects.get(id=image_id)
-            if action == "like":
-                image.users_like.add(request.user)
-                # add action
-                create_action(request.user, _("likes"), image)
-            else:
-                image.users_like.remove(request.user)
-            return JsonResponse({"status": "ok"})
-        except Image.DoesNotExist:
-            pass
-    return JsonResponse({"status": "error"})
 
 
 class ImageListView(LoginRequiredMixin, TemplateView):

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-28 10:16+0000\n"
+"POT-Creation-Date: 2025-10-28 14:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -95,15 +95,33 @@ msgstr[2] ""
 "\n"
 "        <span class=\"total\">%(total_likes)s</span> лайков"
 
-#: images/templates/images/image/detail.html:20
+#: images/templates/images/image/detail.html:18
+#, python-format
+msgid ""
+"\n"
+"        %(total_views)s view"
+msgid_plural ""
+"\n"
+"        %(total_views)s views"
+msgstr[0] ""
+"\n"
+"        %(total_views)s просмотр"
+msgstr[1] ""
+"\n"
+"        %(total_views)s просмотра"
+msgstr[2] ""
+"\n"
+"        %(total_views)s просмотров"
+
+#: images/templates/images/image/detail.html:25
 msgid "Like"
 msgstr "Нравится"
 
-#: images/templates/images/image/detail.html:22
+#: images/templates/images/image/detail.html:27
 msgid "Unlike"
 msgstr "Не нравится"
 
-#: images/templates/images/image/detail.html:38
+#: images/templates/images/image/detail.html:43
 msgid "Nobody likes this image yet"
 msgstr "Никому пока не понравилось это изображение"
 
@@ -112,14 +130,19 @@ msgstr "Никому пока не понравилось это изображ�
 msgid "Images bookmarked"
 msgstr "Изображения, добавленные в закладки"
 
-#: images/views.py:34
+#: images/templates/images/image/ranking.html:4
+#: images/templates/images/image/ranking.html:7
+msgid "Images ranking"
+msgstr "Рейтинг изображений"
+
+#: images/views.py:36
+msgid "likes"
+msgstr "нравится"
+
+#: images/views.py:77
 msgid "bookmarked image"
 msgstr "добавил изображение в закладки"
 
-#: images/views.py:36
+#: images/views.py:79
 msgid "Image added successfully"
 msgstr "Изображение успешно добавлено"
-
-#: images/views.py:77
-msgid "likes"
-msgstr "нравится"

@@ -1,6 +1,12 @@
 from django.urls import path
 
-from .views import ImageCreateView, ImageDetailView, ImageListView, image_like
+from .views import (
+    ImageCreateView,
+    ImageDetailView,
+    ImageListView,
+    ImageRankingView,
+    image_like,
+)
 
 app_name = "images"
 urlpatterns = [
@@ -10,4 +16,5 @@ urlpatterns = [
     ),
     path("like/", image_like, name="like"),
     path("", ImageListView.as_view(), name="list"),
+    path("ranking/", ImageRankingView.as_view(), name="ranking"),
 ]
