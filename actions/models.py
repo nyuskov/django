@@ -22,7 +22,7 @@ class Action(models.Model):
         verbose_name=_("User"),
     )
     verb: models.CharField = models.CharField(
-        max_length=255, verbose_name=_("Verb")
+        max_length=255, verbose_name=_("Action")
     )
     created: models.DateTimeField = models.DateTimeField(
         auto_now_add=True, verbose_name=_("Creation date")

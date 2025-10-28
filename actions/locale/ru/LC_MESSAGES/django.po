@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-28 08:30+0000\n"
+"POT-Creation-Date: 2025-10-28 09:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,21 +20,17 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: actions/models.py:15
-msgid "Action"
-msgstr "Действие"
-
-#: actions/models.py:16
+#: actions/apps.py:8 actions/models.py:16
 msgid "Actions"
 msgstr "Действия"
+
+#: actions/models.py:15 actions/models.py:25
+msgid "Action"
+msgstr "Действие"
 
 #: actions/models.py:22
 msgid "User"
 msgstr "Пользователь"
-
-#: actions/models.py:25
-msgid "Verb"
-msgstr "Глагол"
 
 #: actions/models.py:28
 msgid "Creation date"
@@ -47,3 +43,7 @@ msgstr "Целевой тип контента"
 #: actions/models.py:41
 msgid "Target object id"
 msgstr "Целевой идентификатор объекта"
+
+#: actions/templates/actions/action/detail.html:20
+msgid "ago"
+msgstr "назад"

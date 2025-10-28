@@ -9,8 +9,10 @@ from django.utils.translation import gettext as _
 from django.views.decorators.http import require_POST
 from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
+
 from .forms import ImageCreateForm
 from .models import Image
+from actions.utils import create_action
 
 
 class ImageCreateView(LoginRequiredMixin, FormView):
@@ -27,6 +29,10 @@ class ImageCreateView(LoginRequiredMixin, FormView):
                 # assign current user to the item
                 new_image.user = self.request.user
                 new_image.save()
+                # add action
+                create_action(
+                    self.request.user, _("bookmarked image"), new_image
+                )
                 messages.success(self.request, _("Image added successfully"))
                 # redirect to new created item detail view
                 return redirect(new_image.get_absolute_url())
@@ -67,6 +73,8 @@ def image_like(request):
             image = Image.objects.get(id=image_id)
             if action == "like":
                 image.users_like.add(request.user)
+                # add action
+                create_action(request.user, _("likes"), image)
             else:
                 image.users_like.remove(request.user)
             return JsonResponse({"status": "ok"})

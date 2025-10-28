@@ -8,6 +8,8 @@ from django.views.decorators.http import require_POST
 
 from .forms import UserRegistrationForm, UserEditForm, ProfileEditForm
 from .models import Profile, Contact
+from actions.models import Action
+from actions.utils import create_action
 
 
 User = get_user_model()
@@ -27,7 +29,18 @@ def user_detail(request, username):
 
 @login_required
 def dashboard(request):
-    return render(request, "account/dashboard.html")
+    # Display all actions by default
+    actions = Action.objects.exclude(user=request.user)
+    following_ids = request.user.following.values_list("id", flat=True)
+    if following_ids:
+        # If user is following others, retrieve only their actions
+        actions = actions.filter(user_id__in=following_ids)
+    actions.select_related("user", "user__profile").prefetch_related("target")[
+        :10
+    ]
+    context = {"actions": actions}
+
+    return render(request, "account/dashboard.html", context)
 
 
 def register(request):
@@ -42,6 +55,8 @@ def register(request):
             new_user.save()
             # Create the user profile
             Profile.objects.create(user=new_user)
+            # add action
+            create_action(new_user, _("has created an account"))
 
             return render(
                 request, "account/register_done.html", {"new_user": new_user}
@@ -88,6 +103,8 @@ def user_follow(request):
                 Contact.objects.get_or_create(
                     user_from=request.user, user_to=user
                 )
+                # add action
+                create_action(request.user, _("is following"), user)
             else:
                 Contact.objects.filter(
                     user_from=request.user, user_to=user

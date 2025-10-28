@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-27 14:38+0000\n"
+"POT-Creation-Date: 2025-10-28 09:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -136,6 +136,10 @@ msgstr "или"
 #: account/templates/account/dashboard.html:19
 msgid "change your password"
 msgstr "изменить свой пароль"
+
+#: account/templates/account/dashboard.html:21
+msgid "What's happening"
+msgstr "Что происходит"
 
 #: account/templates/account/edit.html:4 account/templates/account/edit.html:7
 msgid "Edit your account"
@@ -347,10 +351,18 @@ msgstr "Введите ваш адрес электронной почты дл�
 msgid "Send e-mail"
 msgstr "Отправить на почту"
 
-#: account/views.py:66
+#: account/views.py:59
+msgid "has created an account"
+msgstr "создал аккаунт"
+
+#: account/views.py:81
 msgid "Profile updated successfully"
 msgstr "Профиль успешно обновлён"
 
-#: account/views.py:68
+#: account/views.py:83
 msgid "Error updating your profile"
 msgstr "Ошибка при обновлении вашего профиля"
+
+#: account/views.py:107
+msgid "is following"
+msgstr "следит за"
