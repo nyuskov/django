@@ -9,11 +9,15 @@ class Image(models.Model):
     class Meta:
         indexes = [
             models.Index(fields=["-created"]),
+            models.Index(fields=["-total_likes"]),
         ]
         ordering = ["-created"]
         verbose_name = _("Image")
         verbose_name_plural = _("Images")
 
+    total_likes: models.PositiveIntegerField = models.PositiveIntegerField(
+        default=0, verbose_name=_("Total likes")
+    )
     user: models.ForeignKey = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         related_name="images_created",

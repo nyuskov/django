@@ -18,7 +18,6 @@ Including another URLconf
 from django.conf import settings
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
-from debug_toolbar.toolbar import debug_toolbar_urls  # type: ignore
 from django.urls import path, include
 from django.utils.translation import gettext as _
 from django.views.generic import RedirectView
@@ -54,7 +53,5 @@ urlpatterns = [
         name="favicon",
     ),
     path("jsi18n/", JavaScriptCatalog.as_view(), name="javascript_catalog"),
+    path("__debug__/", include("debug_toolbar.urls")),
 ]
-
-if settings.DEBUG:
-    urlpatterns += debug_toolbar_urls()
