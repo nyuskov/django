@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-29 06:03+0000\n"
+"POT-Creation-Date: 2025-10-29 06:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -520,15 +520,19 @@ msgstr "Люди"
 msgid "Blog"
 msgstr "Блог"
 
-#: templates/base.html:45
+#: templates/base.html:41
+msgid "Shop"
+msgstr ""
+
+#: templates/base.html:48
 msgid "Hello"
 msgstr "Привет"
 
-#: templates/base.html:47
+#: templates/base.html:50
 msgid "Logout"
 msgstr "Выйти"
 
-#: templates/base.html:51
+#: templates/base.html:54
 msgid "Log-in"
 msgstr "Войти"
 

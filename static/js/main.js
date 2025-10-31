@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     } else if (window.location.pathname.search("images") != -1) {
       this.querySelector("#images").classList.add("selected");
+    } else if (window.location.pathname.search("shop") != -1) {
+      this.querySelector("#shop").classList.add("selected");
     }
   } catch {}
 
@@ -24,3 +26,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block source %}
+  <link href="{% static 'css/shop.css' %}" rel="stylesheet" />
+{% endblock %}
+{% block sidebar %}
+  <!-- Sidebar -->
+  <div class="w3-sidebar w3-bar-block sidebar" style="display:none; z-index:5" id="mySidebar">
+    <button class="w3-bar-item w3-button w3-xxlarge" onclick="w3_close()"><i>&times;</i></button>
+    <h2>{% trans 'Categories' %}</h2>
+    <a class="{% if not category %}selected{% endif %} w3-bar-item w3-button" href="{% url 'shop:product_list' %}">{% trans 'All' %}</a>
+    {% for c in categories %}
+      <a href="{{ c.get_absolute_url }}" class="{% if category.slug == c.slug %}selected{% endif %} w3-bar-item w3-button">{{ c.name }}</a>
+    {% endfor %}
+  </div>
+  <button class="w3-xxlarge w3-button menu-button" onclick="w3_open()">&#9776;</button>
+{% endblock %}
+{% block content %}
+  <main class="main" id="mainContent">
+    <div class="side-block"></div>
+    <div class="w3-overlay overlay" onclick="w3_close()" id="myOverlay"></div>
+    <div id="shop_content" class="w3-container content">
+      {% block shop_content %}
+
+      {% endblock %}
+    </div>
+    <div class="side-block">
+      <div id="subheader">
+        <div class="cart">
+          {% trans 'Your cart is empty' %}.
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}

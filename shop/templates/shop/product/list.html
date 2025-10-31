@@ -1,0 +1,36 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %}
+  {% if category %}
+    {{ category.name }}
+  {% else %}
+    {% trans 'Products' %}
+  {% endif %}
+{% endblock %}
+{% block shop_content %}
+  <div class="product-list">
+    <h1>
+      {% if category %}
+        {{ category.name }}
+      {% else %}
+        {% trans 'Products' %}
+      {% endif %}
+    </h1>
+    {% for product in products %}
+      <div class="item">
+        <a href="{{ product.get_absolute_url }}">
+          <img src="{% if product.image %}
+              {{ product.image.url }}
+            {% else %}
+              {% static 'images/no_image.png' %}
+            {% endif %}" />
+        </a>
+        <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
+        <br />
+        ${{ product.price }}
+      </div>
+    {% endfor %}
+  </div>
+  {% include 'pagination.html' with page=page_obj %}
+{% endblock %}

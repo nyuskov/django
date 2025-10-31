@@ -101,6 +101,95 @@ textarea {
     font-size: 13px;
 }
 
+table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    text-align: left;
+    font-size: 14px;
+    padding: 10px;
+    margin: 0;
+}
+
+tbody tr:nth-child(odd) {
+    background: #efefef;
+}
+
+tbody tr.subtotal {
+    background: #ccc;
+}
+
+thead th,
+tbody tr.total {
+    background: #5993bb;
+    color: #fff;
+    font-weight: bold;
+}
+
+table.cart {
+    margin-bottom: 40px;
+}
+
+table.cart img {
+    width: 180px;
+}
+
+tbody td.num {
+    text-align: right;
+}
+
+td input[type="submit"] {
+    font-size: 12px;
+    padding: 4px 10px;
+}
+
+form p label,
+form p input {
+    float: left;
+    clear: both;
+}
+
+form p label {
+    font-size: 14px;
+    padding-bottom: 4px;
+}
+
+form p input {
+    width: 300px;
+    font-size: 13px;
+    margin-bottom: 10px;
+    padding: 10px 12px;
+    border: 0;
+    background: #efefef;
+    color: #666;
+    border-radius: 4px;
+}
+
+ul.errorlist {
+    float: left;
+    color: #ff0000;
+    clear: both;
+    font-size: 13px;
+    margin: 0 0 0 10px;
+    padding: 10px 0;
+}
+
+a.button.light {
+    color: #666;
+    background: #ededed;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
 
 /* header */
 #header {
@@ -259,4 +348,62 @@ ul.messages li a.close {
     border: 0;
     box-shadow: none;
     text-shadow: none;
+}
+
+/* Sidebar */
+#sidebar a.selected {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.separator {
+    margin-left: 250px;
+}
+
+#mySidebar::-webkit-scrollbar {
+    width: 7px;
+    background-color: #aeaeae;
+}
+
+#mySidebar::-webkit-scrollbar-thumb {
+    background-color: #cecece;
+}
+
+#mySidebar::-webkit-scrollbar-track {
+    -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+    background-color: #f9f9f9;
+}
+
+.side-block {
+    width: 12.5%;
+}
+
+.sidebar {
+    width: 250px !important;
+}
+
+.sidebar-content {
+    box-shadow: inset 1px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.menu-button {
+    position: absolute;
+}
+
+
+/* w3 */
+.overlay {
+    cursor: pointer;
+}
+
+/* Content */
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    border: solid #f9f9f9;
+    width: 75%;
 }
