@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-29 06:57+0000\n"
+"POT-Creation-Date: 2025-10-31 09:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,7 +28,7 @@ msgstr "Магазин"
 msgid "Category"
 msgstr "Категория"
 
-#: shop/models.py:13 shop/templates/shop/product/list.html:13
+#: shop/models.py:13 shop/templates/shop/base.html:11
 msgid "Categories"
 msgstr "Категории"
 
@@ -45,7 +45,7 @@ msgid "Product"
 msgstr "Товар"
 
 #: shop/models.py:38 shop/templates/shop/product/list.html:8
-#: shop/templates/shop/product/list.html:30
+#: shop/templates/shop/product/list.html:17
 msgid "Products"
 msgstr "Товары"
 
@@ -73,10 +73,10 @@ msgstr "Дата создания"
 msgid "Update date"
 msgstr "Дата обновления"
 
-#: shop/templates/shop/base.html:10
-msgid "Your cart is empty"
-msgstr "Ваша корзина пуста"
-
-#: shop/templates/shop/product/list.html:16
+#: shop/templates/shop/base.html:12
 msgid "All"
 msgstr "Все"
+
+#: shop/templates/shop/base.html:31
+msgid "Your cart is empty"
+msgstr "Ваша корзина пуста"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-27 13:31+0000\n"
+"POT-Creation-Date: 2025-10-31 09:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,7 +24,7 @@ msgstr ""
 msgid "Blog"
 msgstr "Блог"
 
-#: blog/feeds.py:11 blog/templates/blog/base.html:16
+#: blog/feeds.py:11 blog/templates/blog/base.html:15
 msgid "My blog"
 msgstr "Мой блог"
 
@@ -56,7 +56,7 @@ msgstr "Запрос"
 msgid "Post"
 msgstr "Пост"
 
-#: blog/models.py:22 blog/templates/blog/base.html:13
+#: blog/models.py:22 blog/templates/blog/base.html:12
 msgid "Posts"
 msgstr "Посты"
 
@@ -122,32 +122,32 @@ msgstr "Дата обновления"
 msgid "Comment by {name} on {post}"
 msgstr "Комментарий от {name} к {post}"
 
-#: blog/templates/blog/base.html:14 blog/templates/blog/post/search.html:5
+#: blog/templates/blog/base.html:13 blog/templates/blog/post/search.html:5
 #: blog/templates/blog/post/search.html:26
 msgid "Search"
 msgstr "Поиск"
 
-#: blog/templates/blog/base.html:18
+#: blog/templates/blog/base.html:17
 msgid "This is my blog"
 msgstr "Это мой блог"
 
-#: blog/templates/blog/base.html:19
+#: blog/templates/blog/base.html:18
 msgid "I've written"
 msgstr "Я написал"
 
-#: blog/templates/blog/base.html:19
+#: blog/templates/blog/base.html:18
 msgid "posts so far"
 msgstr "постов на данный момент"
 
-#: blog/templates/blog/base.html:22
+#: blog/templates/blog/base.html:21
 msgid "Subscribe to my RSS feed"
 msgstr "Подписаться на мою RSS-рассылку"
 
-#: blog/templates/blog/base.html:24
+#: blog/templates/blog/base.html:23
 msgid "Latest posts"
 msgstr "Последние посты"
 
-#: blog/templates/blog/base.html:26
+#: blog/templates/blog/base.html:25
 msgid "Most commented posts"
 msgstr "Самые комментируемые посты"
 

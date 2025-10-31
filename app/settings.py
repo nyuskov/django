@@ -101,6 +101,7 @@ INSTALLED_APPS = [
     "images.apps.ImagesConfig",
     "actions.apps.ActionsConfig",
     "shop.apps.ShopConfig",
+    "cart.apps.CartConfig",
 ]
 
 SOCIAL_AUTH_PIPELINE = [
@@ -241,3 +242,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Sitemap
 SITE_ID = 1
+
+# Cart
+CART_SESSION_ID = "cart"

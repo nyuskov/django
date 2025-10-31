@@ -40,6 +40,7 @@ urlpatterns = [
     path("blog/", include("blog.urls", namespace="blog")),
     path("account/", include("account.urls", namespace="account")),
     path("images/", include("images.urls", namespace="images")),
+    path("cart/", include("cart.urls", namespace="cart")),
     path("shop/", include("shop.urls", namespace="shop")),
     path(
         "sitemap.xml",
