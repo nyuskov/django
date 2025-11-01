@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-31 09:47+0000\n"
+"POT-Creation-Date: 2025-10-31 13:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,7 +36,7 @@ msgstr "Изображение"
 msgid "Product"
 msgstr "Товар"
 
-#: cart/templates/cart/detail.html:22
+#: cart/templates/cart/detail.html:22 cart/templates/cart/detail.html:56
 msgid "Remove"
 msgstr "Удалить"
 
@@ -48,14 +48,18 @@ msgstr "Цена за единицу товара"
 msgid "Price"
 msgstr "Цена"
 
-#: cart/templates/cart/detail.html:60
+#: cart/templates/cart/detail.html:50
+msgid "Update"
+msgstr "Обновить"
+
+#: cart/templates/cart/detail.html:67
 msgid "Total"
 msgstr "Общая сумма"
 
-#: cart/templates/cart/detail.html:68
+#: cart/templates/cart/detail.html:75
 msgid "Continue shopping"
 msgstr "Продолжить покупку"
 
-#: cart/templates/cart/detail.html:69
+#: cart/templates/cart/detail.html:76
 msgid "Checkout"
 msgstr "Оформить заказ"

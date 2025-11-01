@@ -1,7 +1,7 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views import View
-from django.views.generic import DetailView
+from django.views.generic import TemplateView
 
 from shop.models import Product
 from .cart import Cart
@@ -31,7 +31,13 @@ class CartRemoveView(LoginRequiredMixin, View):
         return redirect("cart:cart_detail")
 
 
-class CartDetailView(LoginRequiredMixin, DetailView):
-    model = Cart
+class CartDetailView(LoginRequiredMixin, TemplateView):
     template_name = "cart/detail.html"
-    context_object_name = "cart"
+
+    def get(self, request, *args, **kwargs):
+        cart = Cart(request)
+        for item in cart:
+            item["update_quantity_form"] = CartAddProductForm(
+                initial={"quantity": item["quantity"], "override": True}
+            )
+        return render(request, self.template_name, {"cart": cart})

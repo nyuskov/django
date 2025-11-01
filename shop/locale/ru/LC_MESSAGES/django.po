@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-31 09:44+0000\n"
+"POT-Creation-Date: 2025-10-31 13:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -77,6 +77,22 @@ msgstr "Дата обновления"
 msgid "All"
 msgstr "Все"
 
-#: shop/templates/shop/base.html:31
+#: shop/templates/shop/base.html:24
+msgid "Your cart"
+msgstr "Ваша корзина"
+
+#: shop/templates/shop/base.html:25
+#, python-format
+msgid "%(total_items)s item"
+msgid_plural " %(total_items)s items"
+msgstr[0] "%(total_items)s элемент"
+msgstr[1] "%(total_items)s элемента"
+msgstr[2] "%(total_items)s элементов"
+
+#: shop/templates/shop/base.html:27
 msgid "Your cart is empty"
 msgstr "Ваша корзина пуста"
+
+#: shop/templates/shop/product/detail.html:20
+msgid "Add to cart"
+msgstr "Добавить в корзину"

@@ -1,0 +1,4 @@
+.button.light:hover {
+    filter: brightness(75%);
+    background: #ededed;
+}

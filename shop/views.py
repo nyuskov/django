@@ -2,6 +2,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, DetailView
 
+from cart.forms import CartAddProductForm
 from .models import Category, Product
 
 
@@ -39,4 +40,5 @@ class ProductDetailView(LoginRequiredMixin, DetailView):
             id=self.kwargs.get("id"),
             available=True,
         )
+        context["cart_product_form"] = CartAddProductForm()
         return context

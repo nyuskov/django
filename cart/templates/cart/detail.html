@@ -1,10 +1,13 @@
-{% extends 'shop/base.html' %}
+{% extends 'base.html' %}
 {% load i18n %}
 {% load static %}
 {% block title %}
   {% trans 'Your shopping cart' %}
 {% endblock %}
-{% block shop_content %}
+{% block source %}
+  <link rel="stylesheet" href="{% static 'css/cart.css' %}" />
+{% endblock %}
+{% block content %}
   <h1>{% trans 'Your shopping cart' %}</h1>
   <table class="cart">
     <thead>
@@ -38,15 +41,22 @@
                 <img src="{% if product.image %}
                     {{ product.image.url }}
                   {% else %}
-                    {% static 'img/no_image.png' %}
+                    {% static 'images/no_image.png' %}
                   {% endif %}" />
               </a>
             </td>
             <td>{{ product.name }}</td>
-            <td>{{ item.quantity }}</td>
+            <td>
+              <form action="{% url 'cart:cart_add' product.id %}" method="post">
+                {{ item.update_quantity_form.quantity }}
+                {{ item.update_quantity_form.override }}
+                <input type="submit" value="{% trans 'Update' %}" />
+                {% csrf_token %}
+              </form>
+            </td>
             <td>
               <form action="{% url 'cart:cart_remove' product.id %}" method="post">
-                <input type="submit" value="Remove" />
+                <input type="submit" value="{% trans 'Remove' %}" />
                 {% csrf_token %}
               </form>
             </td>
