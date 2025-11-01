@@ -23,7 +23,7 @@
         {% if total_items > 0 %}
           {% trans 'Your cart' %}:
           <a href="{% url 'cart:cart_detail' %}">{% blocktrans count total_items as total_items %}{{ total_items }} item{% plural %} {{ total_items }} items{% endblocktrans %}, ${{ cart.get_total_price }}</a>
-        {% else %}
+        {% elif not order %}
           {% trans 'Your cart is empty' %}.
         {% endif %}
       {% endwith %}

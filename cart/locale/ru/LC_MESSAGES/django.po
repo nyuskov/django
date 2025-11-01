@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-31 13:56+0000\n"
+"POT-Creation-Date: 2025-11-01 15:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,46 +20,46 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: cart/forms.py:9 cart/templates/cart/detail.html:19
+#: cart/forms.py:9 cart/templates/cart/detail.html:22
 msgid "Quantity"
 msgstr "Количество"
 
-#: cart/templates/cart/detail.html:5 cart/templates/cart/detail.html:8
+#: cart/templates/cart/detail.html:5 cart/templates/cart/detail.html:11
 msgid "Your shopping cart"
 msgstr "Ваша корзина"
 
-#: cart/templates/cart/detail.html:13
+#: cart/templates/cart/detail.html:16
 msgid "Image"
 msgstr "Изображение"
 
-#: cart/templates/cart/detail.html:16
+#: cart/templates/cart/detail.html:19
 msgid "Product"
 msgstr "Товар"
 
-#: cart/templates/cart/detail.html:22 cart/templates/cart/detail.html:56
+#: cart/templates/cart/detail.html:25 cart/templates/cart/detail.html:59
 msgid "Remove"
 msgstr "Удалить"
 
-#: cart/templates/cart/detail.html:25
+#: cart/templates/cart/detail.html:28
 msgid "Unit price"
 msgstr "Цена за единицу товара"
 
-#: cart/templates/cart/detail.html:28
+#: cart/templates/cart/detail.html:31
 msgid "Price"
 msgstr "Цена"
 
-#: cart/templates/cart/detail.html:50
+#: cart/templates/cart/detail.html:53
 msgid "Update"
 msgstr "Обновить"
 
-#: cart/templates/cart/detail.html:67
+#: cart/templates/cart/detail.html:70
 msgid "Total"
 msgstr "Общая сумма"
 
-#: cart/templates/cart/detail.html:75
+#: cart/templates/cart/detail.html:78
 msgid "Continue shopping"
 msgstr "Продолжить покупку"
 
-#: cart/templates/cart/detail.html:76
+#: cart/templates/cart/detail.html:79
 msgid "Checkout"
 msgstr "Оформить заказ"

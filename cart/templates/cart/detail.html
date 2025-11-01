@@ -76,6 +76,6 @@
   </table>
   <p class="text-right">
     <a href="{% url 'shop:product_list' %}" class="button light">{% trans 'Continue shopping' %}</a>
-    <a href="#" class="button">{% trans 'Checkout' %}</a>
+    <a href="{% url 'orders:order_create' %}" class="button">{% trans 'Checkout' %}</a>
   </p>
 {% endblock %}
