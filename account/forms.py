@@ -26,14 +26,14 @@ class ProfileEditForm(forms.ModelForm):
 
 
 class UserRegistrationForm(forms.ModelForm):
-    class Meta:
-        model = get_user_model()
-        fields = ["username", "first_name", "email"]
-
     password = forms.CharField(label=_("Password"), widget=forms.PasswordInput)
     password2 = forms.CharField(
         label=_("Repeat password"), widget=forms.PasswordInput
     )
+
+    class Meta:
+        model = get_user_model()
+        fields = ["username", "first_name", "email"]
 
     def clean_password2(self):
         cd = self.cleaned_data

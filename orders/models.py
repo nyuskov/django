@@ -3,14 +3,6 @@ from django.utils.translation import gettext as _
 
 
 class Order(models.Model):
-    class Meta:
-        ordering = ["-created"]
-        indexes = [
-            models.Index(fields=["-created"]),
-        ]
-        verbose_name = _("Order")
-        verbose_name_plural = _("Orders")
-
     first_name: models.CharField = models.CharField(
         max_length=50, verbose_name=_("First name")
     )
@@ -37,6 +29,14 @@ class Order(models.Model):
         default=False, verbose_name=_("Paid")
     )
 
+    class Meta:
+        ordering = ["-created"]
+        indexes = [
+            models.Index(fields=["-created"]),
+        ]
+        verbose_name = _("Order")
+        verbose_name_plural = _("Orders")
+
     def __str__(self):
         return f"{_("Order")} {self.id}"
 
@@ -44,11 +44,7 @@ class Order(models.Model):
         return sum(item.get_cost() for item in self.items.all())
 
 
-class OrderItem(models.Model):
-    class Meta:
-        verbose_name = _("Order item")
-        verbose_name_plural = _("Order items")
-        
+class OrderItem(models.Model):        
     order: models.ForeignKey = models.ForeignKey(
         Order, related_name="items", on_delete=models.CASCADE,
         verbose_name=_("Order"),
@@ -63,6 +59,10 @@ class OrderItem(models.Model):
     quantity: models.PositiveIntegerField = models.PositiveIntegerField(
         default=1, verbose_name=_("Quantity"),
     )
+
+    class Meta:
+        verbose_name = _("Order item")
+        verbose_name_plural = _("Order items")
 
     def __str__(self):
         return str(self.id)

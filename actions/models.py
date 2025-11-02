@@ -6,15 +6,6 @@ from django.utils.translation import gettext as _
 
 
 class Action(models.Model):
-    class Meta:
-        indexes = [
-            models.Index(fields=["-created"]),
-            models.Index(fields=["target_ct", "target_id"]),
-        ]
-        ordering = ["-created"]
-        verbose_name = _("Action")
-        verbose_name_plural = _("Actions")
-
     user: models.ForeignKey = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         related_name="actions",
@@ -41,3 +32,12 @@ class Action(models.Model):
         verbose_name=_("Target object id"),
     )
     target: GenericForeignKey = GenericForeignKey("target_ct", "target_id")
+
+    class Meta:
+        indexes = [
+            models.Index(fields=["-created"]),
+            models.Index(fields=["target_ct", "target_id"]),
+        ]
+        ordering = ["-created"]
+        verbose_name = _("Action")
+        verbose_name_plural = _("Actions")

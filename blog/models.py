@@ -13,14 +13,6 @@ class PublishedManager(models.Manager):
 
 
 class Post(models.Model):
-    class Meta:
-        ordering: tuple[Literal["-publish"]] = ("-publish",)
-        indexes: list[models.Index] = [
-            models.Index(fields=["-publish"]),
-        ]
-        verbose_name: str = _("Post")
-        verbose_name_plural: str = _("Posts")
-
     class Status(models.TextChoices):
         DRAFT = "DF", _("Draft")
         PUBLISHED = "PB", _("Published")
@@ -61,6 +53,14 @@ class Post(models.Model):
         verbose_name=_("Author"),
     )
 
+    class Meta:
+        ordering: tuple[Literal["-publish"]] = ("-publish",)
+        indexes: list[models.Index] = [
+            models.Index(fields=["-publish"]),
+        ]
+        verbose_name: str = _("Post")
+        verbose_name_plural: str = _("Posts")
+
     def __str__(self):
         return self.title
 
@@ -77,14 +77,6 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    class Meta:
-        ordering = ["created"]
-        indexes = [
-            models.Index(fields=["created"]),
-        ]
-        verbose_name: str = _("Comment")
-        verbose_name_plural: str = _("Comments")
-
     post: models.ForeignKey = models.ForeignKey(
         Post,
         on_delete=models.CASCADE,
@@ -105,6 +97,14 @@ class Comment(models.Model):
     active: models.BooleanField = models.BooleanField(
         default=True, verbose_name=_("Status")
     )
+
+    class Meta:
+        ordering = ["created"]
+        indexes = [
+            models.Index(fields=["created"]),
+        ]
+        verbose_name: str = _("Comment")
+        verbose_name_plural: str = _("Comments")
 
     def __str__(self):
         return _("Comment by {name} on {post}").format(

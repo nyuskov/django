@@ -4,6 +4,13 @@ from django.utils.translation import gettext as _
 
 
 class Category(models.Model):
+    name: models.CharField = models.CharField(
+        max_length=200, verbose_name=_("Name")
+    )
+    slug: models.SlugField = models.SlugField(
+        max_length=200, unique=True, verbose_name=_("Slug")
+    )
+
     class Meta:
         ordering = ["name"]
         indexes = [
@@ -11,13 +18,6 @@ class Category(models.Model):
         ]
         verbose_name = _("Category")
         verbose_name_plural = _("Categories")
-
-    name: models.CharField = models.CharField(
-        max_length=200, verbose_name=_("Name")
-    )
-    slug: models.SlugField = models.SlugField(
-        max_length=200, unique=True, verbose_name=_("Slug")
-    )
 
     def __str__(self):
         return self.name
@@ -27,16 +27,6 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    class Meta:
-        ordering = ["name"]
-        indexes = [
-            models.Index(fields=["id", "slug"]),
-            models.Index(fields=["name"]),
-            models.Index(fields=["-created"]),
-        ]
-        verbose_name = _("Product")
-        verbose_name_plural = _("Products")
-
     category: models.ForeignKey = models.ForeignKey(
         Category,
         related_name="products",
@@ -69,6 +59,16 @@ class Product(models.Model):
     updated: models.DateTimeField = models.DateTimeField(
         auto_now=True, verbose_name=_("Update date")
     )
+
+    class Meta:
+        ordering = ["name"]
+        indexes = [
+            models.Index(fields=["id", "slug"]),
+            models.Index(fields=["name"]),
+            models.Index(fields=["-created"]),
+        ]
+        verbose_name = _("Product")
+        verbose_name_plural = _("Products")
 
     def __str__(self):
         return self.name

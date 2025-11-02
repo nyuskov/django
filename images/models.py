@@ -6,15 +6,6 @@ from django.utils.translation import gettext as _
 
 
 class Image(models.Model):
-    class Meta:
-        indexes = [
-            models.Index(fields=["-created"]),
-            models.Index(fields=["-total_likes"]),
-        ]
-        ordering = ["-created"]
-        verbose_name = _("Image")
-        verbose_name_plural = _("Images")
-
     total_likes: models.PositiveIntegerField = models.PositiveIntegerField(
         default=0, verbose_name=_("Total likes")
     )
@@ -49,6 +40,15 @@ class Image(models.Model):
         blank=True,
         verbose_name=_("Users who liked it"),
     )
+
+    class Meta:
+        indexes = [
+            models.Index(fields=["-created"]),
+            models.Index(fields=["-total_likes"]),
+        ]
+        ordering = ["-created"]
+        verbose_name = _("Image")
+        verbose_name_plural = _("Images")
 
     def __str__(self):
         return self.title
