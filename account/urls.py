@@ -8,7 +8,7 @@ from django.contrib.auth.views import (
     PasswordResetConfirmView,
     PasswordResetCompleteView,
 )
-from django.urls import path, reverse_lazy, include
+from django.urls import path, reverse_lazy
 
 from .views import (
     dashboard,

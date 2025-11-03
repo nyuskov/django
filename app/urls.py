@@ -44,6 +44,10 @@ urlpatterns = [
     path("orders/", include("orders.urls", namespace="orders")),
     path("shop/", include("shop.urls", namespace="shop")),
     path(
+        "notifications/",
+        include("notifications.urls", namespace="notifications"),
+    ),
+    path(
         "sitemap.xml",
         sitemap,
         {"sitemaps": sitemaps},

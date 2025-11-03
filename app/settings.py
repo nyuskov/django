@@ -48,6 +48,12 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL")
 
+SMS_ENABLED = True
+SMS_API_KEY = config("SMS_API_KEY")
+
+TELEGRAM_ENABLED = True
+TELEGRAM_BOT_TOKEN = config("TELEGRAM_BOT_TOKEN")
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -92,6 +98,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.sites",
     "django.contrib.sitemaps",
+    "rest_framework",
     "debug_toolbar",
     "django_extensions",
     "taggit",
@@ -118,6 +125,16 @@ SOCIAL_AUTH_PIPELINE = [
     "social_core.pipeline.social_auth.load_extra_data",
     "social_core.pipeline.user.user_details",
 ]
+
+REST_FRAMEWORK = {
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.IsAuthenticated",
+    ],
+    "DEFAULT_PAGINATION_CLASS": (
+        "rest_framework.pagination." "PageNumberPagination"
+    ),
+    "PAGE_SIZE": 20,
+}
 
 AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
