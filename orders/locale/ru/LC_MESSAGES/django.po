@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-05 06:35+0000\n"
+"POT-Creation-Date: 2025-11-05 13:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,69 +20,135 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: orders/apps.py:8 orders/models.py:38
+#: orders/admin.py:15
+msgid "View"
+msgstr "Смотреть"
+
+#: orders/admin.py:18
+msgid "Order detail"
+msgstr "Детали заказа"
+
+#: orders/admin.py:46
+msgid "Export to CSV"
+msgstr "Экспортировать в CSV"
+
+#: orders/admin.py:57 orders/templates/admin/orders/order/detail.html:71
+msgid "Stripe payment"
+msgstr "Платёж Stripe"
+
+#: orders/apps.py:8 orders/models.py:41
+#: orders/templates/admin/orders/order/detail.html:9
 msgid "Orders"
 msgstr "Заказы"
 
-#: orders/models.py:7
+#: orders/models.py:8
 msgid "First name"
 msgstr "Имя"
 
-#: orders/models.py:10
+#: orders/models.py:11
 msgid "Last name"
 msgstr "Фамилия"
 
-#: orders/models.py:12
+#: orders/models.py:13 orders/templates/admin/orders/order/detail.html:38
 msgid "Email"
 msgstr "Почта"
 
-#: orders/models.py:14
+#: orders/models.py:15 orders/templates/admin/orders/order/detail.html:46
 msgid "Address"
 msgstr "Адрес"
 
-#: orders/models.py:17
+#: orders/models.py:18
+msgid "Stripe ID"
+msgstr "Идентификатор Stripe"
+
+#: orders/models.py:20
 msgid "Postal code"
 msgstr "Почтовый индекс"
 
-#: orders/models.py:20
+#: orders/models.py:23
 msgid "City"
 msgstr "Город"
 
-#: orders/models.py:23
+#: orders/models.py:26
 msgid "Creation date"
 msgstr "Дата создания"
 
-#: orders/models.py:26
+#: orders/models.py:29
 msgid "Update date"
 msgstr "Дата обновления"
 
-#: orders/models.py:29
+#: orders/models.py:32 orders/templates/admin/orders/order/detail.html:63
 msgid "Paid"
 msgstr "Оплачен"
 
-#: orders/models.py:37 orders/models.py:41 orders/models.py:50
+#: orders/models.py:40 orders/models.py:44 orders/models.py:65
+#: orders/templates/admin/orders/order/detail.html:4
+#: orders/templates/admin/orders/order/detail.html:11
+#: orders/templates/admin/orders/order/detail.html:17
 msgid "Order"
 msgstr "Заказ"
 
-#: orders/models.py:54
+#: orders/models.py:69 orders/templates/admin/orders/order/detail.html:87
 msgid "Product"
 msgstr "Товар"
 
-#: orders/models.py:57
+#: orders/models.py:72 orders/templates/admin/orders/order/detail.html:90
 msgid "Price"
 msgstr "Цена"
 
-#: orders/models.py:60
+#: orders/models.py:75 orders/templates/admin/orders/order/detail.html:93
 msgid "Quantity"
 msgstr "Количество"
 
-#: orders/models.py:64
+#: orders/models.py:79
 msgid "Order item"
 msgstr "Объект заказа"
 
-#: orders/models.py:65
+#: orders/models.py:80
 msgid "Order items"
 msgstr "Объекты заказов"
+
+#: orders/templates/admin/orders/order/detail.html:8
+msgid "Home"
+msgstr "Главная"
+
+#: orders/templates/admin/orders/order/detail.html:12
+msgid "Detail"
+msgstr "Детали"
+
+#: orders/templates/admin/orders/order/detail.html:20
+msgid "Print order"
+msgstr "Напечатать заказ"
+
+#: orders/templates/admin/orders/order/detail.html:26
+msgid "Created"
+msgstr "Создан"
+
+#: orders/templates/admin/orders/order/detail.html:32
+msgid "Customer"
+msgstr "Покупатель"
+
+#: orders/templates/admin/orders/order/detail.html:53
+msgid "Total amount"
+msgstr "Общая сумма"
+
+#: orders/templates/admin/orders/order/detail.html:59
+msgid "Status"
+msgstr "Статус"
+
+#: orders/templates/admin/orders/order/detail.html:65
+msgid "Pending payment"
+msgstr "В ожидании платежа"
+
+#: orders/templates/admin/orders/order/detail.html:82
+msgid "Items bought"
+msgstr "Купленные элементы"
+
+#: orders/templates/admin/orders/order/detail.html:96
+#: orders/templates/admin/orders/order/detail.html:111
+#: orders/templates/orders/order/create.html:19
+msgid "Total"
+msgstr "Общая сумма"
 
 #: orders/templates/orders/order/create.html:4
 #: orders/templates/orders/order/create.html:7
@@ -92,10 +158,6 @@ msgstr "Оформить"
 #: orders/templates/orders/order/create.html:9
 msgid "Your order"
 msgstr "Ваш заказ"
-
-#: orders/templates/orders/order/create.html:19
-msgid "Total"
-msgstr "Общая сумма"
 
 #: orders/templates/orders/order/create.html:25
 msgid "Place order"
