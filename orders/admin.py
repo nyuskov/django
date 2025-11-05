@@ -10,12 +10,20 @@ from django.utils.translation import gettext_lazy as _
 from .models import Order, OrderItem
 
 
+def order_pdf(obj):
+    url = reverse("orders:admin_order_pdf", args=[obj.id])
+    return mark_safe(f'<a href="{url}">PDF</a>')
+
+
+order_pdf.short_description = _("Invoice")  # type: ignore
+
+
 def order_detail(obj):
     url = reverse("orders:admin_order_detail", args=[obj.id])
     return mark_safe(f'<a href="{url}">{_("View")}</a>')
 
 
-order_detail.short_description = _("Order detail")
+order_detail.short_description = _("Order detail")  # type: ignore
 
 
 def export_to_csv(modeladmin, request, queryset):
@@ -43,7 +51,7 @@ def export_to_csv(modeladmin, request, queryset):
     return response
 
 
-export_to_csv.short_description = _("Export to CSV")
+export_to_csv.short_description = _("Export to CSV")  # type: ignore
 
 
 def order_payment(obj):
@@ -54,7 +62,7 @@ def order_payment(obj):
     return ""
 
 
-order_payment.short_description = _("Stripe payment")
+order_payment.short_description = _("Stripe payment")  # type: ignore
 
 
 class OrderItemInline(admin.TabularInline):
@@ -77,6 +85,7 @@ class OrderAdmin(admin.ModelAdmin):
         "created",
         "updated",
         order_detail,
+        order_pdf,
     ]
     list_filter = ["paid", "created", "updated"]
     inlines = [OrderItemInline]
