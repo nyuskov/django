@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-31 09:44+0000\n"
+"POT-Creation-Date: 2025-11-05 06:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,7 +32,7 @@ msgstr "Мой блог"
 msgid "New posts of my blog"
 msgstr "Новые посты на моём блоге"
 
-#: blog/forms.py:8 blog/models.py:95
+#: blog/forms.py:8 blog/models.py:87
 msgid "Name"
 msgstr "Имя"
 
@@ -44,7 +44,7 @@ msgstr "От"
 msgid "To"
 msgstr "К"
 
-#: blog/forms.py:12 blog/models.py:85 blog/templates/blog/post/detail.html:34
+#: blog/forms.py:12 blog/models.py:106 blog/templates/blog/post/detail.html:34
 msgid "Comment"
 msgstr "Комментарий"
 
@@ -52,70 +52,70 @@ msgstr "Комментарий"
 msgid "Query"
 msgstr "Запрос"
 
-#: blog/models.py:21 blog/models.py:92
-msgid "Post"
-msgstr "Пост"
-
-#: blog/models.py:22 blog/templates/blog/base.html:12
-msgid "Posts"
-msgstr "Посты"
-
-#: blog/models.py:25
+#: blog/models.py:17
 msgid "Draft"
 msgstr "Черновик"
 
-#: blog/models.py:26 blog/templates/blog/post/detail.html:12
+#: blog/models.py:18 blog/templates/blog/post/detail.html:12
 #: blog/templates/blog/post/list.html:22
 msgid "Published"
 msgstr "Опубликован"
 
-#: blog/models.py:33
+#: blog/models.py:25
 msgid "Title"
 msgstr "Название"
 
-#: blog/models.py:36
+#: blog/models.py:28
 msgid "Slug"
 msgstr "Слаг"
 
-#: blog/models.py:38 blog/models.py:98
+#: blog/models.py:30 blog/models.py:90
 msgid "Body"
 msgstr "Тело"
 
-#: blog/models.py:41
+#: blog/models.py:33
 msgid "Publish date"
 msgstr "Дата публикации"
 
-#: blog/models.py:45
+#: blog/models.py:37
 msgid "Creation date"
 msgstr "Дата создания"
 
-#: blog/models.py:49
+#: blog/models.py:41
 msgid "Update date"
 msgstr "Дата обновления"
 
-#: blog/models.py:55 blog/models.py:106
+#: blog/models.py:47 blog/models.py:98
 msgid "Status"
 msgstr "Статус"
 
-#: blog/models.py:61
+#: blog/models.py:53
 msgid "Author"
 msgstr "Автор"
 
-#: blog/models.py:86
-msgid "Comments"
-msgstr "Комментарии"
+#: blog/models.py:61 blog/models.py:84
+msgid "Post"
+msgstr "Пост"
 
-#: blog/models.py:97
+#: blog/models.py:62 blog/templates/blog/base.html:12
+msgid "Posts"
+msgstr "Посты"
+
+#: blog/models.py:89
 msgid "E-mail"
 msgstr "Почта"
 
-#: blog/models.py:100
+#: blog/models.py:92
 msgid "Created date"
 msgstr "Дата создания"
 
-#: blog/models.py:103
+#: blog/models.py:95
 msgid "Updated date"
 msgstr "Дата обновления"
+
+#: blog/models.py:107
+msgid "Comments"
+msgstr "Комментарии"
 
 #: blog/models.py:110
 #, python-brace-format

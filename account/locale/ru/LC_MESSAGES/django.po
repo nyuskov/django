@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-28 09:12+0000\n"
+"POT-Creation-Date: 2025-11-05 06:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,11 +28,11 @@ msgstr "Аккаунт"
 msgid "Email already in use."
 msgstr "Почта уже используется."
 
-#: account/forms.py:33
+#: account/forms.py:29
 msgid "Password"
 msgstr "Пароль"
 
-#: account/forms.py:35
+#: account/forms.py:31
 msgid "Repeat password"
 msgstr "Повторите пароль"
 
@@ -40,53 +40,53 @@ msgstr "Повторите пароль"
 msgid "Passwords don't match."
 msgstr "Пароли не совпадают."
 
-#: account/models.py:9
-msgid "Profile"
-msgstr "Профиль"
-
 #: account/models.py:10
-msgid "Profiles"
-msgstr "Профили"
-
-#: account/models.py:14
 msgid "User"
 msgstr "Пользователь"
 
-#: account/models.py:17
+#: account/models.py:13
 msgid "Date of birth"
 msgstr "Дата рождения"
 
-#: account/models.py:19
+#: account/models.py:15
 msgid "Photo"
 msgstr "Фото"
 
-#: account/models.py:24
+#: account/models.py:20
 msgid "CSS styles"
 msgstr "CSS стили"
+
+#: account/models.py:24
+msgid "Profile"
+msgstr "Профиль"
+
+#: account/models.py:25
+msgid "Profiles"
+msgstr "Профили"
 
 #: account/models.py:28
 msgid "Profile of"
 msgstr "Профиль пользователя"
 
-#: account/models.py:37
-msgid "Contact"
-msgstr "Контакт"
-
-#: account/models.py:38
-msgid "Contacts"
-msgstr "Контакты"
-
-#: account/models.py:44
+#: account/models.py:36
 msgid "Follower"
 msgstr "Последователь"
 
-#: account/models.py:50
+#: account/models.py:42
 msgid "Following"
 msgstr "Следующий"
 
-#: account/models.py:53
+#: account/models.py:45
 msgid "Creation date"
 msgstr "Дата создания"
+
+#: account/models.py:52
+msgid "Contact"
+msgstr "Контакт"
+
+#: account/models.py:53
+msgid "Contacts"
+msgstr "Контакты"
 
 #: account/models.py:56
 msgid "follows"

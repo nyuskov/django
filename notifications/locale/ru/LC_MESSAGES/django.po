@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-02 07:25+0000\n"
+"POT-Creation-Date: 2025-11-05 06:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,74 +19,141 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
-#: notifications/models.py:8
+
+#: notifications/apps.py:8 notifications/models.py:73
+msgid "Notifications"
+msgstr "Уведомления"
+
+#: notifications/models.py:7
 msgid "Email"
 msgstr "Почта"
 
-#: notifications/models.py:9
+#: notifications/models.py:8
 msgid "SMS"
 msgstr "СМС"
 
-#: notifications/models.py:10
+#: notifications/models.py:9
 msgid "Telegram"
 msgstr "Телеграм"
 
-#: notifications/models.py:18 notifications/models.py:55
+#: notifications/models.py:17 notifications/models.py:54
 msgid "User"
 msgstr "Пользователь"
 
-#: notifications/models.py:21
+#: notifications/models.py:20
 msgid "Email enabled"
 msgstr "Почта включена"
 
-#: notifications/models.py:24
+#: notifications/models.py:23
 msgid "SMS enabled"
 msgstr "СМС включена"
 
-#: notifications/models.py:27
+#: notifications/models.py:26
 msgid "Telegram enabled"
 msgstr "Телеграм включён"
 
-#: notifications/models.py:33
+#: notifications/models.py:32
 msgid "Telegram chat id"
 msgstr "Телеграм чат идентификатор"
 
-#: notifications/models.py:39
+#: notifications/models.py:38
 msgid "Phone number"
 msgstr "Номер телефона"
 
-#: notifications/models.py:42
+#: notifications/models.py:41
 msgid "Priority of delivery channels"
 msgstr "Приоритет каналов доставки"
 
-#: notifications/models.py:46 notifications/models.py:47
+#: notifications/models.py:45 notifications/models.py:46
 msgid "Notification settings"
 msgstr "Настройки уведомлений"
 
-#: notifications/models.py:58
+#: notifications/models.py:57
 msgid "Title"
 msgstr "Название"
 
-#: notifications/models.py:60
+#: notifications/models.py:59
 msgid "Message"
 msgstr "Сообщение"
 
-#: notifications/models.py:62
+#: notifications/models.py:61
 msgid "Creation date"
 msgstr "Дата создания"
 
-#: notifications/models.py:65
+#: notifications/models.py:64
 msgid "Sent"
 msgstr "Отправлено"
 
-#: notifications/models.py:68
+#: notifications/models.py:67
 msgid "Sent date"
 msgstr "Дата отправки"
 
-#: notifications/models.py:73
+#: notifications/models.py:72
 msgid "Notification"
 msgstr "Уведомление"
 
-#: notifications/models.py:74
-msgid "Notifications"
-msgstr "Уведомления"
+#: notifications/services.py:19
+#, fuzzy
+#| msgid "Email enabled"
+msgid "Email service is disabled"
+msgstr "Почта включена"
+
+#: notifications/services.py:35
+#, fuzzy
+#| msgid "Email enabled"
+msgid "Email sending failed"
+msgstr "Почта включена"
+
+#: notifications/services.py:45
+msgid "SMS service is disabled"
+msgstr ""
+
+#: notifications/services.py:48
+#, fuzzy
+#| msgid "Phone number"
+msgid "Phone number not provided"
+msgstr "Номер телефона"
+
+#: notifications/services.py:67
+#, fuzzy
+#| msgid "SMS enabled"
+msgid "SMS sending failed"
+msgstr "СМС включена"
+
+#: notifications/services.py:77
+#, fuzzy
+#| msgid "Telegram enabled"
+msgid "Telegram service is disabled"
+msgstr "Телеграм включён"
+
+#: notifications/services.py:80
+#, fuzzy
+#| msgid "Telegram chat id"
+msgid "Telegram chat ID not provided"
+msgstr "Телеграм чат идентификатор"
+
+#: notifications/services.py:99
+#, fuzzy
+#| msgid "Telegram enabled"
+msgid "Telegram sending failed"
+msgstr "Телеграм включён"
+
+#: notifications/services.py:141
+msgid "Unknown channel"
+msgstr ""
+
+#: notifications/services.py:151
+#, fuzzy
+#| msgid "Notification settings"
+msgid "Notification settings not found for user"
+msgstr "Настройки уведомлений"
+
+#: notifications/views.py:32
+#, fuzzy
+#| msgid "Notification settings"
+msgid "Notification sent successfully"
+msgstr "Настройки уведомлений"
+
+#: notifications/views.py:35
+msgid "Failed to send notification"
+msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-28 14:44+0000\n"
+"POT-Creation-Date: 2025-11-05 06:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: images/apps.py:8 images/models.py:16
+#: images/apps.py:8 images/models.py:51
 msgid "Images"
 msgstr "Изображения"
 
@@ -32,39 +32,39 @@ msgstr "Указанный URL не соответствует допустим�
 msgid "Couldn't download the given URL."
 msgstr "Не могу загрузить указанный URL."
 
-#: images/models.py:15 images/models.py:37
-msgid "Image"
-msgstr "Изображение"
-
-#: images/models.py:19
+#: images/models.py:10
 msgid "Total likes"
 msgstr "Общее количество лайков"
 
-#: images/models.py:25
+#: images/models.py:16
 msgid "User"
 msgstr "Пользователь"
 
-#: images/models.py:28
+#: images/models.py:19
 msgid "Title"
 msgstr "Название"
 
-#: images/models.py:31
+#: images/models.py:22
 msgid "Slug"
 msgstr "Слаг"
 
-#: images/models.py:34
+#: images/models.py:25
 msgid "URL"
 msgstr ""
 
-#: images/models.py:40
+#: images/models.py:28 images/models.py:50
+msgid "Image"
+msgstr "Изображение"
+
+#: images/models.py:31
 msgid "Description"
 msgstr "Описание"
 
-#: images/models.py:43
+#: images/models.py:34
 msgid "Creation date"
 msgstr "Дата создания"
 
-#: images/models.py:50
+#: images/models.py:41
 msgid "Users who liked it"
 msgstr "Пользователи, которым понравилось"
 

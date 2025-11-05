@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-01 17:02+0000\n"
+"POT-Creation-Date: 2025-11-05 06:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,69 +20,69 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: orders/apps.py:8 orders/models.py:12
+#: orders/apps.py:8 orders/models.py:38
 msgid "Orders"
 msgstr "Заказы"
 
-#: orders/models.py:11 orders/models.py:41 orders/models.py:54
-msgid "Order"
-msgstr "Заказ"
-
-#: orders/models.py:15
+#: orders/models.py:7
 msgid "First name"
 msgstr "Имя"
 
-#: orders/models.py:18
+#: orders/models.py:10
 msgid "Last name"
 msgstr "Фамилия"
 
-#: orders/models.py:20
+#: orders/models.py:12
 msgid "Email"
 msgstr "Почта"
 
-#: orders/models.py:22
+#: orders/models.py:14
 msgid "Address"
 msgstr "Адрес"
 
-#: orders/models.py:25
+#: orders/models.py:17
 msgid "Postal code"
 msgstr "Почтовый индекс"
 
-#: orders/models.py:28
+#: orders/models.py:20
 msgid "City"
 msgstr "Город"
 
-#: orders/models.py:31
+#: orders/models.py:23
 msgid "Creation date"
 msgstr "Дата создания"
 
-#: orders/models.py:34
+#: orders/models.py:26
 msgid "Update date"
 msgstr "Дата обновления"
 
-#: orders/models.py:37
+#: orders/models.py:29
 msgid "Paid"
 msgstr "Оплачен"
 
-#: orders/models.py:49
-msgid "Order item"
-msgstr "Объект заказа"
+#: orders/models.py:37 orders/models.py:41 orders/models.py:50
+msgid "Order"
+msgstr "Заказ"
 
-#: orders/models.py:50
-msgid "Order items"
-msgstr "Объекты заказов"
-
-#: orders/models.py:58
+#: orders/models.py:54
 msgid "Product"
 msgstr "Товар"
 
-#: orders/models.py:61
+#: orders/models.py:57
 msgid "Price"
 msgstr "Цена"
 
-#: orders/models.py:64
+#: orders/models.py:60
 msgid "Quantity"
 msgstr "Количество"
+
+#: orders/models.py:64
+msgid "Order item"
+msgstr "Объект заказа"
+
+#: orders/models.py:65
+msgid "Order items"
+msgstr "Объекты заказов"
 
 #: orders/templates/orders/order/create.html:4
 #: orders/templates/orders/order/create.html:7
