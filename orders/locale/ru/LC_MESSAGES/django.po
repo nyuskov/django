@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-05 14:08+0000\n"
+"POT-Creation-Date: 2025-11-06 09:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,79 +40,87 @@ msgstr "Экспортировать в CSV"
 msgid "Stripe payment"
 msgstr "Платёж Stripe"
 
-#: orders/apps.py:8 orders/models.py:41
+#: orders/apps.py:8 orders/models.py:59
 #: orders/templates/admin/orders/order/detail.html:9
 msgid "Orders"
 msgstr "Заказы"
 
-#: orders/models.py:8
+#: orders/models.py:13
 msgid "First name"
 msgstr "Имя"
 
-#: orders/models.py:11
+#: orders/models.py:16
 msgid "Last name"
 msgstr "Фамилия"
 
-#: orders/models.py:13 orders/templates/admin/orders/order/detail.html:38
+#: orders/models.py:18 orders/templates/admin/orders/order/detail.html:38
 msgid "Email"
 msgstr "Почта"
 
-#: orders/models.py:15 orders/templates/admin/orders/order/detail.html:46
+#: orders/models.py:20 orders/templates/admin/orders/order/detail.html:46
 msgid "Address"
 msgstr "Адрес"
 
-#: orders/models.py:18
+#: orders/models.py:23
 msgid "Stripe ID"
 msgstr "Идентификатор Stripe"
 
-#: orders/models.py:20
+#: orders/models.py:25
 msgid "Postal code"
 msgstr "Почтовый индекс"
 
-#: orders/models.py:23
+#: orders/models.py:28
 msgid "City"
 msgstr "Город"
 
-#: orders/models.py:26
+#: orders/models.py:31
 msgid "Creation date"
 msgstr "Дата создания"
 
-#: orders/models.py:29
+#: orders/models.py:34
 msgid "Update date"
 msgstr "Дата обновления"
 
-#: orders/models.py:32 orders/templates/admin/orders/order/detail.html:63
+#: orders/models.py:37 orders/templates/admin/orders/order/detail.html:63
 #: orders/templates/orders/order/pdf.html:57
 msgid "Paid"
 msgstr "Оплачен"
 
-#: orders/models.py:40 orders/models.py:44 orders/models.py:65
+#: orders/models.py:45
+msgid "Coupon"
+msgstr "Купон"
+
+#: orders/models.py:50
+msgid "Discount"
+msgstr "Скидка"
+
+#: orders/models.py:58 orders/models.py:62 orders/models.py:93
 #: orders/templates/admin/orders/order/detail.html:4
 #: orders/templates/admin/orders/order/detail.html:11
 #: orders/templates/admin/orders/order/detail.html:17
 msgid "Order"
 msgstr "Заказ"
 
-#: orders/models.py:69 orders/templates/admin/orders/order/detail.html:87
+#: orders/models.py:97 orders/templates/admin/orders/order/detail.html:87
 #: orders/templates/orders/order/pdf.html:21
 msgid "Product"
 msgstr "Товар"
 
-#: orders/models.py:72 orders/templates/admin/orders/order/detail.html:90
+#: orders/models.py:100 orders/templates/admin/orders/order/detail.html:90
 #: orders/templates/orders/order/pdf.html:24
 msgid "Price"
 msgstr "Цена"
 
-#: orders/models.py:75 orders/templates/admin/orders/order/detail.html:93
+#: orders/models.py:103 orders/templates/admin/orders/order/detail.html:93
 #: orders/templates/orders/order/pdf.html:27
 msgid "Quantity"
 msgstr "Количество"
 
-#: orders/models.py:79
+#: orders/models.py:107
 msgid "Order item"
 msgstr "Объект заказа"
 
-#: orders/models.py:80
+#: orders/models.py:108
 msgid "Order items"
 msgstr "Объекты заказов"
 
@@ -156,7 +164,7 @@ msgstr "Купленные элементы"
 
 #: orders/templates/admin/orders/order/detail.html:96
 #: orders/templates/admin/orders/order/detail.html:111
-#: orders/templates/orders/order/create.html:19
+#: orders/templates/orders/order/create.html:25
 #: orders/templates/orders/order/pdf.html:45
 msgid "Total"
 msgstr "Общая сумма"
@@ -170,7 +178,11 @@ msgstr "Оформить"
 msgid "Your order"
 msgstr "Ваш заказ"
 
-#: orders/templates/orders/order/create.html:25
+#: orders/templates/orders/order/create.html:19
+msgid "off"
+msgstr ""
+
+#: orders/templates/orders/order/create.html:31
 msgid "Place order"
 msgstr "Оформить заказ"
 

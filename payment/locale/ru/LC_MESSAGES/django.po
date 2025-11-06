@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-05 06:35+0000\n"
+"POT-Creation-Date: 2025-11-06 09:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
 #: payment/templates/payment/canceled.html:4
 msgid "Payment canceled"
 msgstr "Платёж отменен"
@@ -68,10 +69,22 @@ msgid "Quantity"
 msgstr "Количество"
 
 #: payment/templates/payment/process.html:25
-#: payment/templates/payment/process.html:47
+#: payment/templates/payment/process.html:63
 msgid "Total"
 msgstr "Общая стоимость"
 
-#: payment/templates/payment/process.html:54
+#: payment/templates/payment/process.html:48
+msgid "Subtotal"
+msgstr "Подытог"
+
+#: payment/templates/payment/process.html:55
+msgid "coupon"
+msgstr "купон"
+
+#: payment/templates/payment/process.html:55
+msgid "off"
+msgstr "скидка"
+
+#: payment/templates/payment/process.html:71
 msgid "Pay now"
 msgstr "Оплатить сейчас"

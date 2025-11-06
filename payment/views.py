@@ -1,5 +1,6 @@
 from decimal import Decimal
 
+from django.http import HttpResponse
 import stripe
 from django.conf import settings
 from django.shortcuts import get_object_or_404, redirect, render
@@ -41,8 +42,23 @@ def payment_process(request):
                     "quantity": item.quantity,
                 }
             )
+
+        # Stripe coupon
+        if order.coupon:
+            stripe_coupon = stripe.Coupon.create(
+                name=order.coupon.code,
+                percent_off=order.discount,
+                duration="once",
+            )
+            session_data["discounts"] = [{"coupon": stripe_coupon.id}]
         # create Stripe checkout session
-        session = stripe.checkout.Session.create(**session_data)
+        try:
+            session = stripe.checkout.Session.create(**session_data)
+        except stripe.InvalidRequestError as e:
+            return HttpResponse(
+                str(e),
+                status=400,
+            )
         # redirect to Stripe payment form
         return redirect(session.url, code=303)
 
