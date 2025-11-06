@@ -14,9 +14,15 @@
           <span>&#8381;{{ item.total_price }}</span>
         </li>
       {% endfor %}
+      {% if cart.coupon %}
+        <li>
+          "{{ cart.coupon.code }}" ({{ cart.coupon.discount }}<i>%</i> {% trans 'off' %})
+          <span class="neg">- &#8381;{{ cart.get_discount|floatformat:2 }}</span>
+        </li>
+      {% endif %}
     </ul>
     <p>
-      {% trans 'Total' %}: &#8381;{{ cart.get_total_price }}
+      {% trans 'Total' %}: &#8381;{{ cart.get_total_price_after_discount|floatformat:2 }}
     </p>
   </div>
   <form method="post" class="order-form">

@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.views import View
 from django.views.generic import TemplateView
 
+from coupons.forms import CouponApplyForm
 from shop.models import Product
 from .cart import Cart
 from .forms import CartAddProductForm
@@ -40,4 +41,9 @@ class CartDetailView(LoginRequiredMixin, TemplateView):
             item["update_quantity_form"] = CartAddProductForm(
                 initial={"quantity": item["quantity"], "override": True}
             )
-        return render(request, self.template_name, {"cart": cart})
+        coupon_apply_form = CouponApplyForm()
+        return render(
+            request,
+            self.template_name,
+            {"cart": cart, "coupon_apply_form": coupon_apply_form},
+        )
