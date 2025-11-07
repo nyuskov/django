@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-06 08:36+0000\n"
+"POT-Creation-Date: 2025-11-07 07:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,18 +68,22 @@ msgstr "скидка"
 msgid "Total"
 msgstr "Общая сумма"
 
-#: cart/templates/cart/detail.html:94
+#: cart/templates/cart/detail.html:95
+msgid "People who bought this also bought"
+msgstr "Люди, которые купили этот товар, также купили"
+
+#: cart/templates/cart/detail.html:113
 msgid "Apply a coupon"
 msgstr "Применить купон"
 
-#: cart/templates/cart/detail.html:98
+#: cart/templates/cart/detail.html:117
 msgid "Apply"
 msgstr "Применить"
 
-#: cart/templates/cart/detail.html:102
+#: cart/templates/cart/detail.html:121
 msgid "Continue shopping"
 msgstr "Продолжить покупку"
 
-#: cart/templates/cart/detail.html:103
+#: cart/templates/cart/detail.html:122
 msgid "Checkout"
 msgstr "Оформить заказ"

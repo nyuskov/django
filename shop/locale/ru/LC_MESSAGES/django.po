@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-05 06:35+0000\n"
+"POT-Creation-Date: 2025-11-07 06:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -96,3 +96,7 @@ msgstr "Ваша корзина пуста"
 #: shop/templates/shop/product/detail.html:20
 msgid "Add to cart"
 msgstr "Добавить в корзину"
+
+#: shop/templates/shop/product/detail.html:25
+msgid "People who bought this also bought"
+msgstr "Люди, которые купили этот товар, также купили"

@@ -4,6 +4,7 @@ from django.views.generic import ListView, DetailView
 
 from cart.forms import CartAddProductForm
 from .models import Category, Product
+from .recommender import Recommender
 
 
 class ProductListView(LoginRequiredMixin, ListView):
@@ -41,4 +42,8 @@ class ProductDetailView(LoginRequiredMixin, DetailView):
             available=True,
         )
         context["cart_product_form"] = CartAddProductForm()
+        r = Recommender()
+        context["recommended_products"] = r.suggest_products_for(
+            [context["product"]], 4
+        )
         return context
